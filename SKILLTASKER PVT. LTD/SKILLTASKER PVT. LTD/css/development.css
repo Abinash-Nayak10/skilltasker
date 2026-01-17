@@ -1,0 +1,148 @@
+ body 
+  { 
+    font-family: Arial, sans-serif; 
+    background: #f0f8ff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+  }
+  
+  main 
+  { 
+    flex: 1; 
+  }
+
+  /* Navbar Animation */
+  .navbar 
+  { 
+    opacity: 0; 
+    transform: translateY(-30px); 
+    transition: all 1s ease-out; 
+  }
+  
+  .navbar.visible 
+  { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+
+  /* Header Animation */
+  header 
+  { 
+    background: #17a2b8; 
+    color: #fff; 
+    text-align: center; 
+    padding: 60px 60px; 
+    overflow: hidden; 
+  }
+  
+  header h2, header p 
+  { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease-out; 
+  }
+  
+  header h2.visible, header p.visible 
+  { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+
+  /* Course cards */
+  .course-card-wrapper 
+  { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: all 0.8s ease-out; 
+  }
+  
+  .course-card-wrapper.visible 
+  { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  
+  .course-card 
+  { 
+    background: #fff; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s, box-shadow 0.3s; 
+  }
+  
+  .course-card:hover 
+  { 
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2); 
+  }
+  
+  .course-card h5 a 
+  { 
+    text-decoration: none; 
+    color: #007BFF; 
+    font-weight: 600; 
+  }
+  
+  .course-card h5 a:hover 
+  { 
+    color: #0056b3; 
+  }
+
+  /* Footer animations */
+  .footer-bottom 
+  { 
+    transform: translateY(50px); 
+    opacity: 0; 
+    transition: all 1s ease-out; 
+    background: #1abc9c; 
+    color: white; 
+    padding: 10px 0; 
+    font-size: 18px; 
+    text-align: center;
+  }
+
+  .footer-bottom.visible 
+  { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+
+  /* Footer links */
+  .footer a 
+  { 
+    color: #fff; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+  }
+
+  .footer a:hover 
+  { 
+    color: #17a2b8; 
+  }
+
+  @media(min-width: 992px){
+    .navbar .dropdown:hover .dropdown-menu{
+        display: block;
+        margin-top: 0;
+    }
+}
+
+    .navbar-nav .nav-link:hover{
+    background: lightgreen;
+    border-radius: 20px;
+}
+
+
+/* ✅ Center toggler menu on mobile */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        text-align: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }

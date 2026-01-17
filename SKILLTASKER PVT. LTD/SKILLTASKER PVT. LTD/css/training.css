@@ -1,0 +1,169 @@
+ body { 
+  font-family: Arial, sans-serif; 
+  background: #f0f8ff; 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+
+main { 
+  flex: 1; 
+}
+
+  /* Header */
+  header { 
+    background: #17a2b8; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px 20px; 
+  }
+  
+  header h2 
+  { 
+    font-weight: 700; 
+    margin-bottom: 10px; 
+  }
+
+  header p 
+  { 
+    font-size: 1.2rem; 
+  }
+
+  header input 
+  { 
+    max-width: 400px; 
+    margin-top: 20px; 
+    border-radius: 25px; 
+    padding: 10px 15px; 
+    border: none; 
+  }
+
+  /* Course cards */
+  .course-card-wrapper { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: all 0.8s ease-out; 
+  }
+
+  .course-card-wrapper.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+
+  .course-card { 
+    background: #fff; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    transition: 
+    transform 0.3s, box-shadow 0.3s; 
+  }
+
+  .course-card:hover 
+  { 
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2); 
+  }
+
+  .course-card h5 a 
+  { 
+    text-decoration: none; 
+    color: #007BFF; 
+    font-weight: 600; 
+  }
+
+  .course-card h5 a:hover 
+  { 
+    color: #0056b3; 
+  }
+
+  /* Button pulse */
+  @keyframes pulse {
+    0% { 
+      transform: scale(1); 
+      box-shadow: 0 0 0 rgba(0,123,255,0.4); 
+    }
+
+    50% { 
+      transform: scale(1.05); 
+      box-shadow: 0 0 15px rgba(0,123,255,0.6);
+     }
+
+    100% { 
+      transform: scale(1); 
+      box-shadow: 0 0 0 rgba(0,123,255,0.4); 
+    }
+  }
+
+  .btn-enroll 
+  { 
+    background: #007BFF; 
+    color: #fff; 
+    border-radius: 50px; 
+    font-weight: 600; 
+    animation: pulse 2s infinite; 
+  }
+
+  /* Footer */
+  .footer-bottom { 
+    background: #1abc9c; 
+    color: white; 
+    padding: 10px 0; 
+    font-size: 18px; 
+    text-align: center; 
+    transform: translateY(50px); 
+    opacity: 0; 
+    transition: all 1s ease-out; 
+  }
+
+  .footer.visible { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+
+  .footer-bottom.visible { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+
+  /* Animated Icons */
+  #animatedIcons .icon {
+    opacity: 0;
+    transform: translateY(50px) rotate(0deg);
+    transition: all 0.8s ease-out;
+    margin: 15px;
+  }
+
+  #animatedIcons .icon.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg);
+  }
+
+  #animatedIcons .icon:hover {
+    transform: scale(1.2) rotate(360deg);
+    color: #17a2b8;
+  }
+
+  @media(min-width: 992px){
+    .navbar .dropdown:hover .dropdown-menu{
+        display: block;
+        margin-top: 0;
+    }
+}
+
+    .navbar-nav .nav-link:hover{
+    background: lightgreen;
+    border-radius: 20px;
+}
+
+/* ✅ Center toggler menu on mobile */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        text-align: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }

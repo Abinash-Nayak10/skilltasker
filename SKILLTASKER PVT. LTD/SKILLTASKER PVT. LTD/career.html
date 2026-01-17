@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers - Internship Availability</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="shortcut icon" href="/images/logo.png" type="/image/png">
+
+  <link rel="stylesheet" href="/css/career.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="/images/logo.png" alt="SkillTasker Logo" height="60" width="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="training.html">Training</a></li>
+              <li><a class="dropdown-item" href="development.html">Development</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
+          <li class="nav-item">
+            <a class="nav-link" style="background: linear-gradient(to right, #f9335e, #e73ee7); border-radius: 20px;" href="book-demo.html">Book A Demo!</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Careers Section -->
+  <section class="careers-section">
+    <h2>Careers</h2>
+    <p>Explore Internship & Job Opportunities With SkillTasker.</p>
+  </section>
+
+  <!-- Main Section -->
+  <main class="container my-5">
+    <div class="row g-4 justify-content-center align-items-stretch">
+      <!-- Internship Availability Card -->
+      <div class="col-md-6 col-lg-5 d-flex">
+        <div class="card-custom h-100 w-100">
+          <span class="leftRight"></span>
+          <span class="topBottom"></span>
+
+          <h2>Internship Availability</h2>
+          <p>We currently have openings for Web Development, Java, and Django internships.</p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" class="btn-custom">Apply Now</a>
+          <button class="btn-custom" onclick="showPopup()">Job Description</button>
+        </div>
+      </div>
+
+      <!-- Vacancy Card -->
+      <div class="col-md-6 col-lg-5 d-flex">
+        <div class="card-custom h-100 w-100">
+          <span class="leftRight"></span>
+          <span class="topBottom"></span>
+
+          <h2>Open Positions</h2>
+          <p>We are hiring the best candidate for various positions. Click to know the all details briefly.</p>
+          <a href="current-opening.html" class="btn-custom">Click Me</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div class="footer-bottom">
+    <p>All Rights Reserved SkillTasker Pvt. Ltd. @2025</p>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">X</button>
+      <h3>Terms and Conditions</h3>
+      <p>
+        • This internship is unpaid and is intended for learning purposes.<br>
+        • You must complete all tasks assigned during the internship.<br>
+        • Certification will be provided upon successful completion.<br>
+        • Misuse or misbehavior may result in termination of the internship.<br>
+        • By applying, you agree to follow our policies and code of conduct.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Popup JS -->
+  <script src="/js/script.js"></script>
+
+</body>
+</html>

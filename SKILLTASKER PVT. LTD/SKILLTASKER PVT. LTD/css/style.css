@@ -1,0 +1,302 @@
+    /* ---------- Base ---------- */
+    :root {
+      --brand-green: #25D366;
+      --footer-dark: #0a1a2f;
+      --footer-accent: #1abc9c;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #24292f;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a { text-decoration: none; }
+
+    /* ---------- Topbar ---------- */
+    .topbar {
+      background: var(--brand-green);
+      color: white;
+      font-size: 0.95rem;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar-brand img { height: 60px; width: 80px; object-fit: contain; }
+    .navbar-toggler:focus { box-shadow: none; }
+    .navbar-toggler .close-icon { display: none; font-size: 1.75rem; line-height:1; }
+    .navbar-toggler .navbar-toggler-icon { width: 1.75rem; height: 1.75rem; }
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon { display: none; }
+    .navbar-toggler:not(.collapsed) .close-icon { display: inline-block; }
+
+    .navbar-nav .nav-link{
+      color: #000;
+      transition: color 0.3s ease, background 0.2s ease;
+      border-radius: 20px;
+      padding: 6px 10px;
+    }
+    .navbar-nav .nav-link:hover{
+      background: lightgreen;
+    }
+    .navbar-nav .nav-link.active{ font-weight: bold; }
+
+    /* Navbar normal */
+.navbar {
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 1020;
+}
+
+/* Navbar fixed */
+.navbar.fixed-top-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+    @media(min-width:992px){
+      .navbar .dropdown:hover .dropdown-menu{ display:block; margin-top:0; }
+    }
+
+    /* ---------- Hero / Carousel ---------- */
+    .hero-slider .carousel-item {
+      /* Use a max so very tall phones don't crop too aggressively */
+      height: min(80vh, 720px);
+      position: relative;
+    }
+    .hero-slider .carousel-item img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-caption {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    .hero-caption h1 { color: #fff; }
+    .hero-caption .btn { margin-top: 1rem; }
+
+    /* ---------- Sections ---------- */
+    .pd-5 { padding: 60px 0; }
+    .bg-light-service { background-color: aliceblue; width: 100%; padding: 15px 0; }
+    .feature-card {
+      border: 1px solid rgba(0,0,0,.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,.08);
+    }
+
+    /* ---------- Images & ratios ---------- */
+    .ratio-16x9 { border-radius: 20px; overflow: hidden; }
+    .img-cover, .img-cover1, .img-cover2 {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 20px;
+    }
+
+    /* The "hidden / show" animation used for the about image */
+    .hidden-img { opacity: 0; transform: translateX(-15%); transition: transform 1.2s ease-out, opacity 1.2s ease-out; }
+    .show-img { opacity: 1; transform: translateX(0); }
+
+    /* ---------- Contact / form ---------- */
+    .contact-section {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+    .left-box, .right-box { padding: 40px; }
+    .left-box { background: #f9f9f9; flex: 1; }
+    .right-box { background: var(--brand-green); color: #fff; flex: 1; }
+    .right-box form input, .right-box form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 18px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .right-box form button {
+      background: #fff;
+      color: #2e7d32;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .right-box form button:hover { background: #c8e6c9; }
+
+    /* ---------- Marquee (logo track) ---------- */
+    .marquee-container { overflow:hidden; white-space:nowrap; position:relative; padding:20px; text-align:center; background:transparent; }
+    .marquee-track { display:inline-block; animation: marquee 20s linear infinite; }
+    .marquee-track img { height: 120px; width: auto; margin: 0 24px; transition: transform .25s ease; object-fit: contain; }
+    .marquee-track img:hover { transform: scale(1.05); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ---------- Simple marquee text (old <marquee>) ---------- */
+    .marquee-container1 { color: black; padding: 6px 0; background: #b3d9ff; }
+    .marquee-container1 marquee { font-size: 18px; font-weight: 700; }
+
+  /* WhatsApp floating button */
+.whatsapp-float {
+  position: sticky; /* fixed to viewport */
+  bottom: 20px;    /* 20px from bottom */
+  left: 20px;      /* 20px from left */
+  background-color: var(--brand-green);
+  color: #fff;
+  border-radius: 50%;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  z-index: 1000;   /* lower than navbar if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover { 
+  transform: scale(1.06); 
+  background: #1ebe57; 
+}
+
+
+/* Optional: adjust on small mobile screens if overlapping content */
+@media(max-width: 767px){
+  .whatsapp-float {
+    bottom: 80px; /* move a bit higher if needed */
+    left: 15px;
+  }
+}
+.scrolling-text {
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 10px 0;
+  background-color: bisque;
+  text-align: center;
+}
+
+.scrolling-text p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 18s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+    /* ---------- Footer ---------- */
+    .footer { background: var(--footer-dark); color: #fff; padding: 40px 20px; }
+    .footer a { color: #fff; }
+    .social-icons a { font-size:20px; margin: 0 8px; display:inline-block; color:#fff; transition:all .2s; }
+    .social-icons a:hover { color: #00d084; }
+    .footer-bottom { background: var(--footer-accent); padding: 12px 20px; text-align:center; color: #fff; font-size:16px; }
+
+    /* ---------- Small tweaks ---------- */
+    img { max-width: 100%; height: auto; }
+    .container .row.g-4 > * { box-sizing: border-box; }
+
+    /* ---------- Responsive rules ---------- */
+    @media (max-width: 1200px) {
+      .hero-slider .carousel-item { height: min(70vh, 640px); }
+      .hero-slider .carousel-item img { height: 100%; }
+    }
+    @media (max-width: 992px) {
+      .hero-slider .carousel-item { height: min(60vh, 560px); }
+      .hero-slider .carousel-item img { height: 100%; }
+      .marquee-track img { height: 100px; margin: 0 18px; }
+      .left-box, .right-box { padding: 28px; }
+    }
+    @media (max-width: 768px) {
+      /* stack contact section */
+      .contact-section { flex-direction: column; gap: 0; }
+      .navbar-brand img { height: 50px; width: 65px; }
+    }
+    @media (max-width: 576px) {
+      .hero-slider .carousel-item { height: auto; }
+      .hero-slider .carousel-item img { height: auto; max-height: 60vh; }
+      .hero-caption h1 { font-size: 1.25rem; }
+      .hero-caption p { font-size: 0.95rem; }
+      .marquee-container1 marquee { font-size: 0.9rem; }
+      .topbar .container .row > div { font-size: 0.85rem; }
+      .right-box form input, .right-box form textarea { padding: 14px; }
+    }
+
+    @media (max-width: 576px) {
+  #training .btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+
+/* ✅ Center toggler menu on mobile */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        text-align: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .list-unstyled a:hover{
+      color: lightgreen;
+    }
+
+    /* Slide-in animations */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}

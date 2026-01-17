@@ -1,0 +1,92 @@
+ :root {
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+      --primary: #007bff;
+      --gradient: linear-gradient(90deg, #007bff, #00c6ff);
+    }
+
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    .box {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 28px 0;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      opacity: 0;
+      transform: translateY(30px);
+      /* Separate scroll + hover transitions */
+      transition: opacity 0.7s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Instant hover effect */
+    .box:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 8px 20px rgba(0, 198, 255, 0.3);
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    button.cta {
+      background: var(--gradient);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 17px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    button.cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 198, 255, 0.5);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: rgba(0,0,0,0.06);
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px;
+      background: #111;
+      color: white;
+      font-size: 14px;
+      margin-top: 20px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Responsive design */
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .box {
+        padding: 18px;
+        margin: 20px 0;
+      }
+    }

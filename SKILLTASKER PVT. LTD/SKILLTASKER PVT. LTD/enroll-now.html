@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Enroll Now</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="/images/logo.png" types="/images/png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/enroll now.css">
+</head>
+<body>
+  <!-- Floating Particles -->
+  <div class="particle" style="width:15px;height:15px;left:10%;animation-duration:12s;"></div>
+  <div class="particle" style="width:20px;height:20px;left:30%;animation-duration:15s;animation-delay:2s;"></div>
+  <div class="particle" style="width:10px;height:10px;left:50%;animation-duration:10s;animation-delay:4s;"></div>
+  <div class="particle" style="width:25px;height:25px;left:70%;animation-duration:18s;animation-delay:1s;"></div>
+  <div class="particle" style="width:12px;height:12px;left:85%;animation-duration:14s;animation-delay:3s;"></div>
+
+  <div class="container enroll-container" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="text-center mb-4">Enroll Now</h1>
+    <form id="enrollForm">
+      <div class="mb-3"><label class="form-label">Full Name</label><input type="text" class="form-control" placeholder="Enter your full name" required></div>
+      <div class="mb-3"><label class="form-label">Email Id</label><input type="email" class="form-control" placeholder="Enter your email" required></div>
+      <div class="mb-3"><label class="form-label">Phone Number</label><input type="tel" class="form-control" placeholder="Enter your phone number" required></div>
+      <div class="mb-3"><label class="form-label">Select Courses</label>
+        <select class="form-select" required>
+          <option value="">-- Select a Course --</option>
+          <option value="python">Python</option><option value="java">Java</option>
+          <option value="django">Django</option><option value="web development">Web Development</option>
+          <option value="react js">React JS</option><option value="node js">Node JS</option>
+          <option value="mern">MERN</option><option value="mean">MEAN</option>
+          <option value="sql">SQL</option>
+        </select>
+      </div>
+      <div class="d-grid"><button type="submit" class="btn btn-primary" id="enrollBtn">Enroll Now</button></div>
+    </form>
+  </div>
+
+  <!-- Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:11">
+    <div id="enrollToast" class="toast align-items-center text-bg-success border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">🎉 You have successfully enrolled!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({once:true,duration:1000});
+    const enrollForm=document.getElementById('enrollForm');
+    const enrollToast=new bootstrap.Toast(document.getElementById('enrollToast'));
+    enrollForm.addEventListener('submit',e=>{e.preventDefault(); enrollToast.show(); enrollForm.reset();});
+
+    // Floating particles entrance
+    const particles=document.querySelectorAll('.particle');
+    particles.forEach(p=>{setTimeout(()=>p.classList.add('animate'),Math.random()*1000);});
+
+    // Particle movement with mouse
+    let mouseX=0,mouseY=0; let particlePositions=[];
+    particles.forEach(p=>particlePositions.push({x:p.offsetLeft,y:p.offsetTop}));
+    document.addEventListener('mousemove',e=>{mouseX=e.clientX; mouseY=e.clientY;});
+    function animateParticles(){particles.forEach((p,i)=>{let dx=(mouseX-particlePositions[i].x)*0.02; let dy=(mouseY-particlePositions[i].y)*0.02; particlePositions[i].x+=dx; particlePositions[i].y+=dy; p.style.transform=`translate(${particlePositions[i].x}px,${particlePositions[i].y}px)`}); requestAnimationFrame(animateParticles);}
+    animateParticles();
+
+    // Sparkle on button hover
+    const enrollBtn=document.getElementById('enrollBtn');
+    enrollBtn.addEventListener('mouseenter',()=>{for(let i=0;i<8;i++){const sparkle=document.createElement('div'); sparkle.classList.add('sparkle'); sparkle.style.left=`${Math.random()*enrollBtn.offsetWidth}px`; sparkle.style.top=`${Math.random()*enrollBtn.offsetHeight}px`; sparkle.style.setProperty('--x',`${(Math.random()-0.5)*100}px`); sparkle.style.setProperty('--y',`${(Math.random()-0.5)*100}px`); enrollBtn.appendChild(sparkle); sparkle.addEventListener('animationend',()=>sparkle.remove());}});
+
+    // Mouse-following particle trails
+    document.addEventListener('mousemove',e=>{const trail=document.createElement('div'); trail.classList.add('sparkle'); trail.style.left=`${e.clientX}px`; trail.style.top=`${e.clientY}px`; trail.style.setProperty('--x',`${(Math.random()-0.5)*30}px`); trail.style.setProperty('--y',`${(Math.random()-0.5)*30}px`); let size=Math.random()*6+4; trail.style.width=size+'px'; trail.style.height=size+'px'; document.body.appendChild(trail); trail.addEventListener('animationend',()=>trail.remove());});
+  </script>
+</body>
+</html>

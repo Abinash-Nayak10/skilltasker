@@ -1,0 +1,82 @@
+ body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      background: linear-gradient(to right, #4D55CC, #E53888);
+      color: white;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    #customers th, #customers td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      transition: border-bottom 0.3s ease; /* Smooth animation for bottom line */
+    }
+
+    #customers th {
+      background-color: #04AA6D;
+      color: white;
+      font-size: 18px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Hover effect only on bottom line */
+    #customers tr:hover {
+      background-color: transparent;
+    }
+
+    #customers tr:hover td {
+      border-bottom: 2px solid #E53888;
+    }
+
+    footer {
+      background: #1abc9c; 
+      color: white; 
+      padding: 12px 0; 
+      font-size: 16px; 
+      text-align: center; 
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 576px) {
+      header h2 {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+
+      #customers {
+        display: none; /* Hide table on mobile */
+      }
+
+      .batch-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .batch-card h5 {
+        margin-bottom: 8px;
+        color: #4D55CC;
+      }
+
+      .batch-card p {
+        margin: 2px 0;
+      }
+    }

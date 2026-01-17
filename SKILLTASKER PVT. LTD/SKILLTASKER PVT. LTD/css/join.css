@@ -1,0 +1,49 @@
+ /* Body background */
+    body {
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Fieldset styling */
+    fieldset {
+      max-width: 600px;
+      margin: auto;
+      border-radius: 15px;               /* Border radius */
+      box-shadow: 10px 20px 50px rgba(0,0,0,0.15); /* Box shadow */
+    }
+
+    /* Legend title */
+    legend {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    /* Input focus effect */
+    .form-control:focus, .form-select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Buttons */
+    .btn {
+      width: 120px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive padding */
+    @media (max-width: 576px) {
+      fieldset {
+        padding: 1.5rem !important;
+      }
+      legend {
+        font-size: 1.2rem;
+      }
+    }

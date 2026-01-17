@@ -1,0 +1,221 @@
+  body {
+      background: #f0f8ff;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+.navbar-nav .nav-link:hover {
+      background: lightgreen;
+      border-radius: 20px;
+    }
+    /* Careers Section */
+    .careers-section {
+      background: #2FA7B8;
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .careers-section h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .careers-section p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Main content container - center cards */
+    main.container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .row.g-4 {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Custom Card */
+    .card-custom {
+      position: relative;
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      z-index: 1;
+      margin: auto;
+    }
+
+    .card-custom::before,
+    .card-custom::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(90deg, rgb(233, 117, 117), rgb(230, 192, 122), rgb(224, 224, 103), rgb(102, 223, 102), rgb(92, 92, 227), rgb(175, 102, 224), rgb(224, 108, 224), rgb(227, 108, 108));
+      background-size: 400% 400%;
+      animation: animateBorder 5s linear infinite;
+      z-index: -1;
+    }
+
+    .card-custom::before {
+      height: 6px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .card-custom::after {
+      height: 100%;
+      width: 6px;
+      left: 0;
+      top: 0;
+      border-bottom-left-radius: 15px;
+      border-top-left-radius: 15px;
+    }
+
+    .card-custom span.topBottom,
+    .card-custom span.leftRight {
+      position: absolute;
+      background: linear-gradient(45deg, rgb(223, 108, 108), rgb(227, 186, 110), rgb(227, 227, 104), rgb(111, 231, 111), rgb(86, 86, 223), rgb(179, 112, 224), rgb(217, 104, 217), rgb(220, 110, 110));
+      background-size: 400% 400%;
+      animation: animateBorder 5s linear infinite;
+      z-index: -1;
+    }
+
+    .card-custom span.leftRight {
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .card-custom span.topBottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    @keyframes animateBorder {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 400% 400%; }
+    }
+
+    .btn-custom {
+      padding: 10px 20px;
+      border: none;
+      background-color: #00aaff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-custom:hover {
+      background-color: #007acc;
+    }
+
+    /* Popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 500px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .close-btn {
+      background: red;
+      color: white;
+      border: none;
+      float: right;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    .footer-bottom {
+      background: #1abc9c;
+      padding: 9px 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .footer-bottom p {
+      color: white;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card-custom {
+        width: 100%;
+        padding: 20px 15px;
+      }
+
+      .careers-section h2 {
+        font-size: 28px;
+      }
+
+      .careers-section p {
+        font-size: 16px;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-item {
+        margin: 10px 0;
+      }
+
+      /* Mobile Footer Fixed */
+      .footer-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    .navbar-nav .nav-link.active{ font-weight: bold; }

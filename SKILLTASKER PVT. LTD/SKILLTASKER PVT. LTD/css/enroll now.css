@@ -1,0 +1,241 @@
+/* Centering container */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg, #e0f7fa, #e1f5fe, #b2ebf2, #80deea);
+    background-size: 800% 800%;
+    animation: gradientBG 20s ease infinite;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @keyframes gradientBG 
+  {
+    0%
+    {
+      background-position:0% 50%
+    }
+    50%
+    {
+      background-position:100% 50%
+    }
+    100%
+    {
+      background-position:0% 50%
+    }
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.3);
+    pointer-events: none;
+    will-change: transform;
+    opacity: 0;
+  }
+  .particle.animate { 
+    animation: floatUp 10s linear infinite, fadeIn 2s forwards; 
+  }
+
+  @keyframes floatUp 
+  { 
+    0%
+    {
+      transform:translateY(0) scale(0.5); 
+      opacity:0.3} 50%
+      {
+        opacity:0.6
+      } 
+      100%
+      {
+        transform:translateY(-110vh) scale(1);
+        opacity:0
+      } 
+    }
+
+  @keyframes fadeIn 
+  {
+    0%
+    {
+      opacity:0
+    }
+    100%
+    {
+      opacity:1
+    }
+  }
+
+  /* Magical ripple + hover spark form container */
+  .enroll-container {
+    max-width: 500px;
+    padding: 40px;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,123,255,0.5),0 10px 25px rgba(0,0,0,0.15);
+    animation: ripple 6s ease-in-out infinite;
+  }
+  
+  @keyframes ripple {
+    0% 
+    { 
+      box-shadow:0 0 20px rgba(0,123,255,0.5),0 10px 25px rgba(0,0,0,0.15); 
+      transform:scale(1);
+    }
+    50% 
+    { 
+      box-shadow:0 0 40px rgba(0,123,255,0.7),0 15px 35px rgba(0,0,0,0.2); 
+      transform:scale(1.02);
+    }
+    100% 
+    { 
+      box-shadow:0 0 20px rgba(0,123,255,0.5),0 10px 25px rgba(0,0,0,0.15); 
+      transform:scale(1);
+    }
+  }
+
+  .enroll-container:hover::after {
+    content:'';
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    pointer-events:none;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    animation: spark 1s infinite;
+    border-radius: 15px;
+  }
+
+  @keyframes spark 
+  {
+    0%,100%
+    {
+      transform:scale(0);
+      opacity:0.5
+    }
+    50%
+    {
+      transform:scale(1.2);
+      opacity:1
+    }
+  }
+
+  h1 { 
+    font-weight:700;
+    color:#007BFF; 
+    animation:fadeInDown 1s ease forwards; 
+  }
+
+  @keyframes fadeInDown
+  {
+    0%
+    {
+      opacity:0;
+      transform:translateY(-30px)
+    }
+    100%
+    {
+      opacity:1;
+      transform:translateY(0)
+    }
+  }
+
+  form .form-control {transition:all 0.3s ease;}
+  form .form-control:focus {box-shadow:0 0 8px #007BFF;border-color:#007BFF; transform:scale(1.02);}
+
+  /* Button sparkle */
+  .btn-primary 
+  {
+    position:relative; 
+    overflow:hidden; 
+    transition:all 0.3s ease; 
+    font-weight:600;
+  }
+
+  .btn-primary:hover 
+  {
+    transform:scale(1.05); 
+    box-shadow:0 5px 15px rgba(0,123,255,0.4);
+  }
+
+  .sparkle 
+  {
+    position:absolute; 
+    width:6px; 
+    height:6px; 
+    background:white; 
+    border-radius:50%; 
+    opacity:0; 
+    pointer-events:none; 
+    animation:sparkleAnim 0.8s forwards; 
+    z-index:999;
+  }
+
+  @keyframes sparkleAnim 
+  {
+    0%
+    {
+      opacity:1; 
+      transform:translate(0,0) scale(1);
+    }
+    100%
+    {
+      opacity:0; 
+      transform:translate(var(--x),var(--y)) scale(0);
+    }
+  }
+
+  /* Toast animation */
+  .toast.show 
+  {
+    animation: slideIn 0.5s ease forwards;
+  }
+
+  @keyframes slideIn 
+  {
+    0%
+    {
+      transform:translateX(100%);
+      opacity:0
+    }
+    100%
+    {
+      transform:translateX(0);
+      opacity:1
+    }
+  }
+
+  /* Responsive */
+  @media(max-width:576px)
+  {
+    .enroll-container
+    {
+      padding:25px
+    }
+    .particle
+    {
+      width:8px!important;
+      height:8px!important
+    }
+    .btn-primary
+    {
+      font-size:0.95rem;
+      padding:10px 0
+    }
+  }
+
+  @media(max-width:768px)
+  {
+    .particle
+    {
+      width:10px!important;
+      height:10px!important
+    }
+  }

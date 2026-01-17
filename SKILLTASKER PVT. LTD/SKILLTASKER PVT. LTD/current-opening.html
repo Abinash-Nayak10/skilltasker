@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Current Opening</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="/images/logo.png" types="/images/png">
+
+  <link rel="stylesheet" href="/css/current opening.css">
+</head>
+<body>
+
+<div class="container opening-container">
+
+    <!-- Job 1 -->
+    <div class="col-12">
+      <div class="opening-card" data-aos="fade-up" data-aos-delay="200" data-bs-toggle="modal" data-bs-target="#jobModal1">
+        <h2>📞 Telecaller Vacancy</h2>
+        <p>We have the current opening of Telecaller.   <a href="#" style="text-decoration: none;">Read More</a></p>
+        <!-- Read More Button to open Application Form -->
+        <button class="btn btn-primary read-more-btn" data-bs-toggle="modal" data-bs-target="#applicationModal" data-bs-dismiss="modal">
+          Apply Now
+        </button>
+      </div>
+    </div>
+
+    <!-- Job 2 -->
+    <div class="col-12">
+      <div class="opening-card" data-aos="fade-right" data-aos-delay="400" data-bs-toggle="modal" data-bs-target="#jobModal2">
+        <h2>💻 Digital Marketing</h2>
+        <p>We have the current opening of Digital Marketing.     <a href="#" style="text-decoration: none;">Read More</a></p>
+        <button class="btn btn-primary read-more-btn" data-bs-toggle="modal" data-bs-target="#applicationModal" data-bs-dismiss="modal">
+          Apply Now
+        </button>
+      </div>
+    </div>
+
+</div>
+
+<!-- Job Modal 1 -->
+<div class="modal fade" id="jobModal1" tabindex="-1" aria-labelledby="jobModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jobModalLabel1">📞 Telecaller Vacancy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Job Description:</strong> Handle incoming/outgoing calls, manage customer inquiries, and maintain records.</p>
+        <p><strong>Requirements:</strong> Good communication skills, basic computer knowledge.</p>
+        <p><strong>Location:</strong> Office-based</p>
+        <p><strong>Salary:</strong> As per company standards</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Job Modal 2 -->
+<div class="modal fade" id="jobModal2" tabindex="-1" aria-labelledby="jobModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jobModalLabel2">💻 Digital Marketing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Job Description:</strong> Manage social media campaigns, SEO, email marketing, and content strategy.</p>
+        <p><strong>Requirements:</strong> Knowledge of digital marketing tools, creativity, and analytics skills.</p>
+        <p><strong>Location:</strong> Remote / Office-based</p>
+        <p><strong>Salary:</strong> As per company standards</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Application Form Modal -->
+<div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="applicationModalLabel"><b>📝 Application Form</b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="https://www.google.com" method="post" class="p-3">
+
+          <div class="mb-3">
+            <label for="name" class="form-label"><b>Your Name</b></label>
+            <input type="text" id="name" class="form-control" placeholder="Type Your Name" required minlength="8" maxlength="15">
+          </div>
+
+          <div class="mb-3">
+            <label for="mail" class="form-label"><b>Email</b></label>
+            <input type="email" id="mail" class="form-control" placeholder="Type Your Email">
+          </div>
+
+          <div class="mb-3">
+            <label for="mob" class="form-label"><b>Phone Number</b></label>
+            <input type="number" id="mob" class="form-control" placeholder="Type Your Phone Number" pattern="[0-9]{10}">
+          </div>
+
+          <div class="mb-3">
+            <label for="gender" class="form-label"><b>Gender</b></label>
+            <select id="gender" class="form-select">
+              <option selected disabled>Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="qual" class="form-label"><b>Qualification</b></label>
+            <select id="qual" class="form-select">
+              <option selected disabled>Select</option>
+              <option value="b.tech">B. Tech</option>
+              <option value="bsc">BSC</option>
+              <option value="m.tech">M. Tech</option>
+              <option value="mba">MBA</option>
+              <option value="mca">MCA</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="file" class="form-label"><b>Upload Resume</b></label>
+            <input type="file" id="file" class="form-control">
+          </div>
+
+          <div class="d-flex gap-4 justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>

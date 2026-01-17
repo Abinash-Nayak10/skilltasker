@@ -1,0 +1,144 @@
+ body, html {
+      height: 100%;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link {
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: lightgreen;
+      border-radius: 20px;
+    }
+
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      color: black !important;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* ✅ Center toggler menu on mobile */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        text-align: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* Background */
+    .contact-bg {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=1920&q=80') no-repeat center center/cover;
+      position: relative;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-bg::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    /* Glassmorphism Card */
+    .contact-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .contact-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(255,255,255,0.5);
+      border-radius: 0;
+      color: white;
+      height: 5vh;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #ffd700;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #f0f0f0;
+    }
+
+    .btn-custom {
+      background: #ffd700;
+      color: #000;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background: #ffc107;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer-bottom {
+      background: #1abc9c;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    /* ✅ Mobile view: center Book A Demo form */
+    @media (max-width: 576px) {
+      .contact-bg {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+      .contact-card {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+      }
+    }
