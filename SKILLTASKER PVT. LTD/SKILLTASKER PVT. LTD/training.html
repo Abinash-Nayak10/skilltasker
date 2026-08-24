@@ -6,36 +6,58 @@
 <title>SkillTasker Training</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="shortcut icon" href="/images/logo.png" types="/images/png">
+<link rel="shortcut icon" href="images/logo.png" type="image/png">
 
-<link rel="stylesheet" href="/css/training.css">
+<link rel="stylesheet" href="css/training.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<style>
+  header{ background:var(--ink); border-bottom:1px solid var(--hairline); position:relative; overflow:hidden; padding:150px 20px 60px; }
+  header::before{ content:''; position:absolute; inset:0; background:var(--grad-brand); opacity:.12; }
+  header h2{ position:relative; font-family:var(--ff-display); font-size:clamp(28px,4vw,42px); background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header p{ position:relative; color:var(--text-2); }
+  header input{ position:relative; border:1px solid var(--hairline-2); background:var(--ink-3); color:var(--text-1); }
+  header input::placeholder{ color:var(--text-3); }
+  main{ background:var(--ink); }
+  .course-card{ background:var(--ink-3); border:1px solid var(--hairline); }
+  .course-card:hover{ border-color:var(--hairline-2); }
+  .course-card h5 a{ color:var(--text-1); font-family:var(--ff-display); }
+  .course-card h5 a:hover{ color:var(--violet-2); }
+  .course-card p{ color:var(--text-2); }
+  .course-card p a{ color:var(--violet-2); }
+  .btn-enroll{ background:var(--grad-brand); }
+  #animatedIcons .icon img{ filter:grayscale(1) brightness(1.6); opacity:.75; transition:.2s; }
+  #animatedIcons .icon:hover img{ filter:none; opacity:1; }
+</style>
 </head>
-<body>
+<body class="st-theme">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
-  <div class="container">
-    <img src="/images/logo.png" alt="Logo" width="80" height="60" />
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">Services</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item active" href="training.html">Training</a></li>
-            <li><a class="dropdown-item" href="development.html">Development</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
-          <li class="nav-item"><a class="nav-link" style="background: linear-gradient(to right, #f9335e, #e73ee7); border-radius: 20px;" href="book-demo.html">Book A Demo!</a></li></a>
-      </ul>
-    </div>
+<div class="st-topbar">
+  <div class="st-container">
+    <a class="st-top-item" href="mailto:skilltasker9@gmail.com"><i class="fa-solid fa-envelope"></i> skilltasker9@gmail.com</a>
+    <a class="st-top-item" href="tel:+917008482165"><i class="fa-solid fa-phone"></i> +91 70084 82165</a>
+    <span class="st-top-item"><i class="fa-solid fa-location-dot"></i> Bhubaneswar, Odisha</span>
+  </div>
+</div>
+<nav class="st-nav">
+  <div class="st-container">
+    <a class="st-brand" href="index.html"><img src="images/logo.png" alt="SkillTasker Pvt. Ltd. logo"></a>
+    <ul class="st-nav-links" id="stNavLinks">
+      <li><a class="st-link" href="index.html">Home</a></li>
+      <li><a class="st-link" href="aboutus.html">About</a></li>
+      <li><a class="st-link active" href="training.html">Training</a></li>
+      <li><a class="st-link" href="ai solutions.html">AI Solutions</a></li>
+      <li><a class="st-link" href="career.html">Careers</a></li>
+      <li><a class="st-link" href="index.html#contact">Contact</a></li>
+      <li><a class="st-nav-cta" href="book a demo.html">Book a Free Demo</a></li>
+    </ul>
+    <button class="st-nav-toggle" id="stNavToggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
   </div>
 </nav>
+<script>
+  document.getElementById('stNavToggle').addEventListener('click', ()=>document.getElementById('stNavLinks').classList.toggle('st-open'));
+</script>
 
 <main>
   <!-- Header -->
@@ -50,97 +72,97 @@
     <div class="row g-4" id="courseList">
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/PYTHON.pdf" download>PYTHON</a></h5>
-          <p>Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with use of significant identation. Python is dynamically type-checked and garbage-collected. <a href="/pdf/PYTHON.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/PYTHON.pdf" download>PYTHON</a></h5>
+          <p>Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with use of significant identation. Python is dynamically type-checked and garbage-collected. <a href="pdf/PYTHON.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/JAVA.pdf" download>JAVA</a></h5>
-          <p>Java is a popular, object-oriented programming language and computing platform designed for cross-platform compatibility, allowing code to run on any system that supports it. It is a primary language. <a href="/pdf/JAVA.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/JAVA.pdf" download>JAVA</a></h5>
+          <p>Java is a popular, object-oriented programming language and computing platform designed for cross-platform compatibility, allowing code to run on any system that supports it. It is a primary language. <a href="pdf/JAVA.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/DJANGO.pdf" download>DJANGO</a></h5>
-          <p>Django is a free, open-source, high-level Python web framework that enables developers to build web applications quickly and efficiently by taking care of much of the common web development "hassle". <a href="/pdf/DJANGO.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/DJANGO.pdf" download>DJANGO</a></h5>
+          <p>Django is a free, open-source, high-level Python web framework that enables developers to build web applications quickly and efficiently by taking care of much of the common web development "hassle". <a href="pdf/DJANGO.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/WEB DEVELOPMENT.pdf" download>WEB DEVELOPMENT</a></h5>
-          <p>Web Development is the process of creating and maintaing websites and web applications, encompassing front-end, back-end, and full-satck development. Creating the visual layout and user flow. <a href="/pdf/WEB DEVELOPMENT.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/WEB DEVELOPMENT.pdf" download>WEB DEVELOPMENT</a></h5>
+          <p>Web Development is the process of creating and maintaing websites and web applications, encompassing front-end, back-end, and full-satck development. Creating the visual layout and user flow. <a href="pdf/WEB DEVELOPMENT.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/REACT JS.pdf" download>REACT JS</a></h5>
-          <p>React.js, commonly known as React, is an open-source JavaScript library for building user interfaces or UI components. React can be rendered on the server using Node.js, improving initial load times and SEO. <a href="/pdf/REACT JS.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/REACT JS.pdf" download>REACT JS</a></h5>
+          <p>React.js, commonly known as React, is an open-source JavaScript library for building user interfaces or UI components. React can be rendered on the server using Node.js, improving initial load times and SEO. <a href="pdf/REACT JS.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/NODE JS.pdf" download>NODE JS</a></h5>
-          <p>Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code outside of a web browser. Creating server-side applications and web servers. <a href="/pdf/NODE JS.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/NODE JS.pdf" download>NODE JS</a></h5>
+          <p>Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code outside of a web browser. Creating server-side applications and web servers. <a href="pdf/NODE JS.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/MERN.pdf" download>MERN</a></h5>
-          <p>MERN is a technology stack used for building scalable and interactive web applications, consisting of MongoDB, Express.js, React, and Node.js. MERN is a full-stack web development technology. The MERN stack is a completely JavaScript-based stack. <a href="/pdf/MERN.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/MERN.pdf" download>MERN</a></h5>
+          <p>MERN is a technology stack used for building scalable and interactive web applications, consisting of MongoDB, Express.js, React, and Node.js. MERN is a full-stack web development technology. The MERN stack is a completely JavaScript-based stack. <a href="pdf/MERN.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/MEAN.pdf" download>MEAN</a></h5>
-          <p>A Mean is a quantity representing the "center" of a collection of numbers and is intermediate to the extreme values of the set of numbers. Outside probability and statistics, a wide range of other notions of mean are often used in geometry and mathematical analysis. <a href="/pdf/MEAN.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/MEAN.pdf" download>MEAN</a></h5>
+          <p>A Mean is a quantity representing the "center" of a collection of numbers and is intermediate to the extreme values of the set of numbers. Outside probability and statistics, a wide range of other notions of mean are often used in geometry and mathematical analysis. <a href="pdf/MEAN.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/SQL.pdf" download>SQL</a></h5>
-          <p>Structured query language (SQL) is a programming language for storing and processing information in a relational database. A relational database stores information in tabular form, with rows nad columns representing different data attributes and the various relationships between the data values. <a href="/pdf/SQL.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/SQL.pdf" download>SQL</a></h5>
+          <p>Structured query language (SQL) is a programming language for storing and processing information in a relational database. A relational database stores information in tabular form, with rows nad columns representing different data attributes and the various relationships between the data values. <a href="pdf/SQL.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/DATA SCIENCE.pdf" download>DATA SCIENCE</a></h5>
-          <p>Data Science is an interdisciplinary field that combines statistical, mathematical, computational, and scientific methods to extract knowledge and insights from structured and unstructured data. <a href="/pdf/DATA SCIENCE.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/DATA SCIENCE.pdf" download>DATA SCIENCE</a></h5>
+          <p>Data Science is an interdisciplinary field that combines statistical, mathematical, computational, and scientific methods to extract knowledge and insights from structured and unstructured data. <a href="pdf/DATA SCIENCE.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/MACHINE LEARNING.pdf" download>MACHINE LEARNING</a></h5>
-          <p>Machine Learning is a field of Artificial Intelligence that enables computer systems to learn from data and improve their performance on tasks over time without being explicitly programmed for every instruction. <a href="/pdf/MACHINE LEARNING.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/MACHINE LEARNING.pdf" download>MACHINE LEARNING</a></h5>
+          <p>Machine Learning is a field of Artificial Intelligence that enables computer systems to learn from data and improve their performance on tasks over time without being explicitly programmed for every instruction. <a href="pdf/MACHINE LEARNING.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
       <div class="col-md-4 course-card-wrapper">
         <div class="course-card">
-          <h5><a href="/pdf/GENERATIVE AI.pdf" download>GENERATIVE AI</a></h5>
-          <p>AI Tools are software applications that use AI to perform tasks, solve problems, and automate processes across various industries, from content creation and business productivity to software development and data analysis. <a href="/pdf/GENERATIVE AI.pdf" style="text-decoration: none;">Read More...</a></p>
-          <a href="enroll-now.html" class="btn btn-enroll">Enroll Now</a>
+          <h5><a href="pdf/GENERATIVE AI.pdf" download>GENERATIVE AI</a></h5>
+          <p>AI Tools are software applications that use AI to perform tasks, solve problems, and automate processes across various industries, from content creation and business productivity to software development and data analysis. <a href="pdf/GENERATIVE AI.pdf" style="text-decoration: none;">Read More...</a></p>
+          <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-enroll">Enroll Now</a>
         </div>
       </div>
 
@@ -154,14 +176,14 @@
 
         <!-- Animated Icons -->
         <div class="col-md-8 d-flex justify-content-around flex-wrap" id="animatedIcons">
-          <i class="fab fa-3x icon"><img src="/images/html.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/css.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/js.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/react.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/node.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/python.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/java.png" alt="png" height="70" width="70"></i>
-          <i class="fab fa-3x icon"><img src="/images/django.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/html.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/css.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/js.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/react.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/node.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/python.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/java.png" alt="png" height="70" width="70"></i>
+          <i class="fab fa-3x icon"><img src="images/django.png" alt="png" height="70" width="70"></i>
         </div>
 </div>
 
@@ -171,16 +193,30 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer>
-  <div class="footer">
-  <div class="footer-bottom">
-    <p class="mb-0">All Rights Reserved SkillTasker Pvt. Ltd. @2025</p>
+<a href="https://wa.me/917008482165" class="st-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<footer class="st-footer footer">
+  <div class="st-container">
+    <div class="st-grid" style="grid-template-columns:1.2fr 1fr 1fr;">
+      <div>
+        <div class="st-brand"><img src="images/logo.png" alt="SkillTasker logo"></div>
+        <p>Odisha's AI training & AI solutions company.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="career.html">Careers</a></li></ul>
+      </div>
+      <div>
+        <h5>Solutions</h5>
+        <ul><li><a href="ai solutions.html#chatbot">Chatbot Development</a></li><li><a href="ai solutions.html#website">AI-Powered Websites</a></li><li><a href="training.html">Training Programs</a></li></ul>
+      </div>
+    </div>
   </div>
+  <div class="st-footer-bottom footer-bottom">© 2026 SkillTasker Pvt. Ltd. All rights reserved. · Bhubaneswar, Odisha</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/training.js"></script>
+<script src="js/training.js"></script>
 
 </body>
 </html>

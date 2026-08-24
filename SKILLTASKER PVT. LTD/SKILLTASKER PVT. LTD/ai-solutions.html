@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Solutions | SkillTasker Pvt. Ltd.</title>
+<meta name="description" content="Chatbot development, AI-powered websites, app development and digital marketing from SkillTasker Pvt. Ltd. — Bhubaneswar's AI solutions studio." />
+<link rel="shortcut icon" href="images/logo.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/theme.css">
+
+<style>
+  .sol-hero{ position:relative; padding:150px 0 70px; overflow:hidden; text-align:center; }
+  .sol-hero h1{ font-size:clamp(30px,4.4vw,50px); max-width:780px; margin:0 auto 16px; }
+  .sol-hero h1 span{ background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sol-hero p{ max-width:600px; margin:0 auto; font-size:17px; }
+
+  .sol-block{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:70px 0; border-top:1px solid var(--hairline); }
+  .sol-block:first-of-type{ border-top:none; }
+  .sol-block.rev .sol-media{ order:2; }
+  .sol-media{ position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--hairline-2); }
+  .sol-media img{ width:100%; height:340px; object-fit:cover; }
+  .sol-num{ font-family:var(--ff-mono); font-size:13px; color:var(--violet-2); letter-spacing:.1em; }
+  .sol-tag-row{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 22px; }
+  @media(max-width:900px){ .sol-block{ grid-template-columns:1fr; } .sol-block.rev .sol-media{ order:0; } }
+
+  .more-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  @media(max-width:900px){ .more-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .more-grid{ grid-template-columns:1fr; } }
+
+  .case-card{ display:grid; grid-template-columns:.9fr 1.1fr; gap:0; border-radius:24px; overflow:hidden; border:1px solid var(--hairline-2); background:var(--ink-3); }
+  .case-media{ position:relative; }
+  .case-media img{ width:100%; height:100%; object-fit:cover; min-height:280px; }
+  .case-body{ padding:44px; }
+  @media(max-width:800px){ .case-card{ grid-template-columns:1fr; } .case-media img{ min-height:220px; } }
+</style>
+</head>
+
+<body class="st-theme">
+<div class="st-noise"></div>
+
+<div class="st-topbar">
+  <div class="st-container">
+    <a class="st-top-item" href="mailto:skilltasker9@gmail.com"><i class="fa-solid fa-envelope"></i> skilltasker9@gmail.com</a>
+    <a class="st-top-item" href="tel:+917008482165"><i class="fa-solid fa-phone"></i> +91 70084 82165</a>
+    <span class="st-top-item"><i class="fa-solid fa-location-dot"></i> Bhubaneswar, Odisha</span>
+  </div>
+</div>
+<nav class="st-nav">
+  <div class="st-container">
+    <a class="st-brand" href="index.html"><img src="images/logo.png" alt="SkillTasker Pvt. Ltd. logo"></a>
+    <ul class="st-nav-links" id="stNavLinks">
+      <li><a class="st-link" href="index.html">Home</a></li>
+      <li><a class="st-link" href="aboutus.html">About</a></li>
+      <li><a class="st-link" href="training.html">Training</a></li>
+      <li><a class="st-link active" href="ai solutions.html">AI Solutions</a></li>
+      <li><a class="st-link" href="career.html">Careers</a></li>
+      <li><a class="st-link" href="index.html#contact">Contact</a></li>
+      <li><a class="st-nav-cta" href="book a demo.html">Book a Free Demo</a></li>
+    </ul>
+    <button class="st-nav-toggle" id="stNavToggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+<script>document.getElementById('stNavToggle').addEventListener('click', ()=>document.getElementById('stNavLinks').classList.toggle('st-open'));</script>
+
+<header class="sol-hero">
+  <div class="st-glow" style="width:480px;height:480px;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,var(--glow-violet),transparent 65%);"></div>
+  <div class="st-container" style="position:relative;">
+    <span class="st-eyebrow" style="justify-content:center;">AI Solutions</span>
+    <h1>We build <span>AI-powered</span> products for real businesses.</h1>
+    <p>Chatbots, AI-enabled websites, mobile apps and growth marketing — delivered by the same team that trains Odisha's next developers.</p>
+  </div>
+</header>
+
+<!-- Chatbot Development -->
+<section class="st-section-tight">
+  <div class="st-container">
+    <div class="sol-block" id="chatbot">
+      <div class="sol-media"><img src="images/ai4.jpg" alt="Chatbot and AI automation development"></div>
+      <div>
+        <div class="sol-num">01 · Chatbot Development</div>
+        <h2 style="margin-top:10px;">AI chatbots &amp; virtual assistants that actually resolve queries.</h2>
+        <p>We design and deploy conversational AI — customer support bots, WhatsApp/website assistants and internal automation agents — built on modern LLMs and prompt engineering, wired into your existing tools.</p>
+        <div class="sol-tag-row">
+          <span class="st-pill">GenAI &amp; prompt engineering</span>
+          <span class="st-pill">WhatsApp / web chat</span>
+          <span class="st-pill">Workflow automation</span>
+        </div>
+        <a href="ai automation.html" class="st-btn st-btn-ghost">See chatbot & automation work <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- AI-powered websites -->
+    <div class="sol-block rev" id="website">
+      <div class="sol-media"><img src="images/web development.jpg" alt="AI-powered website development"></div>
+      <div>
+        <div class="sol-num">02 · AI-Powered Websites</div>
+        <h2 style="margin-top:10px;">Websites with AI built in, not bolted on.</h2>
+        <p>Fast, SEO-ready sites and web apps with AI features woven through — smart search, personalisation, content generation and embedded assistants — so your website does more than sit there.</p>
+        <div class="sol-tag-row">
+          <span class="st-pill">Modern frameworks</span>
+          <span class="st-pill">SEO & performance</span>
+          <span class="st-pill">AI features on request</span>
+        </div>
+        <a href="website design.html" class="st-btn st-btn-ghost">See website work <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- App Development -->
+    <div class="sol-block" id="app">
+      <div class="sol-media"><img src="images/app develop.png" alt="Mobile app development"></div>
+      <div>
+        <div class="sol-num">03 · App Development</div>
+        <h2 style="margin-top:10px;">Android &amp; cross-platform apps, built for real users.</h2>
+        <p>From wireframes to a published app — we build mobile products with clean UX and the AI features your users actually need, like voice assistants and smart recommendations.</p>
+        <div class="sol-tag-row">
+          <span class="st-pill">Android & cross-platform</span>
+          <span class="st-pill">Voice & AI features</span>
+          <span class="st-pill">UI/UX design</span>
+        </div>
+        <a href="app develop.html" class="st-btn st-btn-ghost">See app development <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Digital Marketing -->
+    <div class="sol-block rev" id="marketing">
+      <div class="sol-media"><img src="images/digital mark.jpg" alt="Digital marketing services"></div>
+      <div>
+        <div class="sol-num">04 · Digital Marketing</div>
+        <h2 style="margin-top:10px;">Growth marketing that's measured, not guessed.</h2>
+        <p>SEO, social and performance campaigns aimed at qualified traffic and conversions — with reporting that tells you what actually worked.</p>
+        <div class="sol-tag-row">
+          <span class="st-pill">SEO</span>
+          <span class="st-pill">Social & paid</span>
+          <span class="st-pill">Analytics & reporting</span>
+        </div>
+        <a href="digital.html" class="st-btn st-btn-ghost">See digital marketing <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case study -->
+<section class="st-section-tight" style="background:var(--ink-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);">
+  <div class="st-container">
+    <div class="st-head st-center">
+      <span class="st-eyebrow" style="justify-content:center;">Recent work</span>
+      <h2 style="font-size:30px;">Case study: Mixo — an AI voice assistant</h2>
+    </div>
+    <div class="case-card st-reveal">
+      <div class="case-media"><img src="images/ai2.jpg" alt="Mixo AI voice assistant project"></div>
+      <div class="case-body">
+        <span class="st-pill">Chatbot & Voice AI</span>
+        <h3 style="margin-top:16px;">Mixo: a voice assistant built end-to-end by our team.</h3>
+        <p>Mixo is a voice-driven AI assistant our delivery team designed and built — from intent handling and prompt design to a working conversational interface. It's part of how we keep our chatbot and automation work grounded in shipped product, not just theory.</p>
+        <a href="book a demo.html" class="st-btn st-btn-primary">Talk to us about a similar build <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- More solutions -->
+<section class="st-section">
+  <div class="st-container">
+    <div class="st-head">
+      <span class="st-eyebrow">Also available</span>
+      <h2 style="font-size:28px;">More ways we can help</h2>
+    </div>
+    <div class="more-grid">
+      <a class="st-card" href="web scraping.html" style="display:block;">
+        <div class="st-icon-tile"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h4 style="font-size:17px;">Web Scraping</h4>
+        <p style="font-size:14px;">Structured data pipelines from public web sources.</p>
+      </a>
+      <a class="st-card" href="graphics.html" style="display:block;">
+        <div class="st-icon-tile"><i class="fa-solid fa-pen-nib"></i></div>
+        <h4 style="font-size:17px;">Graphics Design</h4>
+        <p style="font-size:14px;">Brand identity and UI design that looks the part.</p>
+      </a>
+      <a class="st-card" href="data analysis.html" style="display:block;">
+        <div class="st-icon-tile"><i class="fa-solid fa-database"></i></div>
+        <h4 style="font-size:17px;">Data Analysis</h4>
+        <p style="font-size:14px;">Dashboards and analysis that turn data into decisions.</p>
+      </a>
+      <a class="st-card" href="real time.html" style="display:block;">
+        <div class="st-icon-tile"><i class="fa-solid fa-diagram-project"></i></div>
+        <h4 style="font-size:17px;">Real-Time Projects</h4>
+        <p style="font-size:14px;">Live-data systems that respond and update instantly.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="st-section-tight">
+  <div class="st-container">
+    <div style="text-align:center;background:var(--ink-3);border:1px solid var(--hairline-2);border-radius:32px;padding:60px 40px;">
+      <h2 style="font-size:clamp(24px,3vw,34px);">Have a project brief? Let's scope it together.</h2>
+      <p style="max-width:520px;margin:0 auto 26px;">Tell us what you're building — chatbot, website, app or a marketing push — and we'll tell you honestly what it takes.</p>
+      <a href="book a demo.html" class="st-btn st-btn-primary">Book a Free Demo <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/917008482165" class="st-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<footer class="st-footer">
+  <div class="st-container">
+    <div class="st-grid" style="grid-template-columns:1.2fr 1fr 1fr 1.3fr;">
+      <div>
+        <div class="st-brand"><img src="images/logo.png" alt="SkillTasker logo"></div>
+        <p>Odisha's AI training & AI solutions company — teaching skills and building software that ships.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="career.html">Careers</a></li>
+          <li><a href="book a demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="ai solutions.html#chatbot">Chatbot Development</a></li>
+          <li><a href="ai solutions.html#website">AI-Powered Websites</a></li>
+          <li><a href="ai solutions.html#app">App Development</a></li>
+          <li><a href="ai solutions.html#marketing">Digital Marketing</a></li>
+        </ul>
+      </div>
+      <div class="st-footer-map">
+        <h5>Find us</h5>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7487.431968626879!2d85.80842864008068!3d20.229119892000227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x62d22fa8c441e58d%3A0x8faf82e458aebff0!2sSkillTasker!5e0!3m2!1sen!2sin!4v1756461155977!5m2!1sen!2sin" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="st-footer-bottom">© 2026 SkillTasker Pvt. Ltd. All rights reserved. · Bhubaneswar, Odisha</div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.st-reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('st-in'); } }); }, { threshold: 0.15 });
+  revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book A Demo</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+
+  <link rel="stylesheet" href="css/book a demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    .contact-bg{ background:linear-gradient(rgba(10,7,19,0.75),rgba(10,7,19,0.86)), url('images/ai2.jpg') no-repeat center center/cover; height:auto; min-height:100vh; padding:150px 20px 60px; }
+    .contact-bg::after{ display:none; }
+    .contact-card{ background:var(--ink-3); border:1px solid var(--hairline-2); backdrop-filter:none; }
+    .contact-card h2{ font-family:var(--ff-display); background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    label{ color:var(--text-2); font-family:var(--ff-mono); font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; }
+    .form-control{ color:var(--text-1); border-bottom-color:var(--hairline-2); }
+    .form-control:focus{ border-color:var(--violet-2); }
+    .btn-custom{ background:var(--grad-brand); color:#fff; }
+    .btn-custom:hover{ background:var(--grad-brand); opacity:.9; transform:translateY(-2px); }
+    #successMsg{ background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.4); color:#4ade80; }
+  </style>
+</head>
+<body class="st-theme">
+
+  <div class="st-topbar">
+    <div class="st-container">
+      <a class="st-top-item" href="mailto:skilltasker9@gmail.com"><i class="fa-solid fa-envelope"></i> skilltasker9@gmail.com</a>
+      <a class="st-top-item" href="tel:+917008482165"><i class="fa-solid fa-phone"></i> +91 70084 82165</a>
+      <span class="st-top-item"><i class="fa-solid fa-location-dot"></i> Bhubaneswar, Odisha</span>
+    </div>
+  </div>
+  <nav class="st-nav">
+    <div class="st-container">
+      <a class="st-brand" href="index.html"><img src="images/logo.png" alt="SkillTasker Pvt. Ltd. logo"></a>
+      <ul class="st-nav-links" id="stNavLinks">
+        <li><a class="st-link" href="index.html">Home</a></li>
+        <li><a class="st-link" href="aboutus.html">About</a></li>
+        <li><a class="st-link" href="training.html">Training</a></li>
+      <li><a class="st-link" href="ai solutions.html">AI Solutions</a></li>
+        <li><a class="st-link" href="career.html">Careers</a></li>
+        <li><a class="st-link" href="index.html#contact">Contact</a></li>
+        <li><a class="st-nav-cta active" href="book a demo.html">Book a Free Demo</a></li>
+      </ul>
+      <button class="st-nav-toggle" id="stNavToggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+  <script>
+    document.getElementById('stNavToggle').addEventListener('click', ()=>document.getElementById('stNavLinks').classList.toggle('st-open'));
+    document.querySelectorAll('.st-dropdown > a.st-link').forEach(a=>{a.addEventListener('click',e=>{if(window.innerWidth<=960){e.preventDefault();a.parentElement.classList.toggle('st-open');}});});
+  </script>
+
+  <!-- Contact Section -->
+  <div class="contact-bg">
+    <div class="contact-card" data-aos="zoom-in" data-aos-duration="1000">
+      <h2>Book A Demo</h2>
+
+      <!-- Success message -->
+      <div id="successMsg" class="alert alert-success text-center d-none" role="alert">
+        ✅ Your message has been submitted successfully!
+      </div>
+
+      <form id="contactForm">
+        <div class="mb-3">
+          <label>Your Name</label>
+          <input type="name" name="name" class="form-control" id="dname" required>
+        </div>
+        <div class="mb-3">
+          <label>Email Address</label>
+          <input type="email" name="email" class="form-control" id="demail" required>
+        </div>
+        <div class="mb-3">
+          <label>Phone Number</label>
+          <!-- <input type="number" class="form-control" id="phone" pattern="[0-9]*" inputmode="numeric" required> -->
+           <input type="tel" name="phone" class="form-control" id="dphone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" title="Please enter exactly 10 digits"/>
+        </div>
+        <div class="mb-3">
+          <label>Message</label>
+          <textarea rows="4" class="form-control" name="message" id="message" type="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom w-100">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/917008482165" class="st-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <footer class="st-footer">
+    <div class="st-container">
+      <div class="st-grid" style="grid-template-columns:1.2fr 1fr 1fr;">
+        <div>
+          <div class="st-brand"><img src="images/logo.png" alt="SkillTasker logo"></div>
+          <p>Odisha's AI training & AI solutions company.</p>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="career.html">Careers</a></li></ul>
+        </div>
+        <div>
+          <h5>Solutions</h5>
+          <ul><li><a href="ai solutions.html#chatbot">Chatbot Development</a></li><li><a href="ai solutions.html#website">AI-Powered Websites</a></li><li><a href="training.html">Training Programs</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="st-footer-bottom">© 2026 SkillTasker Pvt. Ltd. All rights reserved. · Bhubaneswar, Odisha</div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 100, duration: 1000 });
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxjYz8A2iUsUPPrBC71xEZFl9FxB3Mh-1LCwsyj6v6_mDrNT2P3b0lFPIZ9uO7Fwvua/exec";
+
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = {
+    type: "demo",
+    name: document.getElementById("dname").value,
+    email: document.getElementById("demail").value,
+    phone: document.getElementById("dphone").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.text();
+
+    if (result.includes("SUCCESS")) {
+      alert("✅ Demo Booked Successfully");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("❌ " + result);
+    }
+
+  } catch (err) {
+    alert("❌ Request failed");
+  }
+});
+  </script>
+</body>
+</html>

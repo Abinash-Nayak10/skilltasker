@@ -213,25 +213,32 @@ window.addEventListener('scroll', function() {
   revealOnScroll(); // Initial call
 });
 // Training
+    
 
+    function sendToWhatsApp(e) {
+    e.preventDefault();
 
-  // Book A Demo
-   AOS.init({ once: true, offset: 100 });
+    let name = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
 
-    // Handle form submission
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    let whatsappNumber = "917008482165"; // SkillTasker WhatsApp number (without +)
 
-      // Show success message
-      document.getElementById("successMsg").classList.remove("d-none");
+    let whatsappLink =
+      "https://wa.me/" + whatsappNumber + "?text=" +
+      encodeURIComponent(
+        "New Contact Request\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n" +
+        "Message: " + message
+      );
 
-      // Reset form
-      this.reset();
+    window.open(whatsappLink, "_blank");
+  }
 
-      // Hide message after 3 sec
-      setTimeout(() => {
-        document.getElementById("successMsg").classList.add("d-none");
-      }, 3000);
-    });
-    // Book A Demo
+  document.getElementById("phone").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+  });
     

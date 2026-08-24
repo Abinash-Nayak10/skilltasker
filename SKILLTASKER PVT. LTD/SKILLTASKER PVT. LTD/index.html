@@ -1,374 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkillTasker Pvt. Ltd. | Odisha's AI Training & AI Solutions Company</title>
+<meta name="description" content="SkillTasker Pvt. Ltd. — Bhubaneswar-based AI training institute and AI solutions company. Learn Web Development, App Development, Data Analysis & GenAI, or hire us to build AI automation, websites and apps for your business." />
+<link rel="shortcut icon" href="images/logo.png" type="image/png">
 
-  <!-- SEO Title -->
-  <title>SkillTasker Pvt. Ltd. | Web Development, App Development & Software Training Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/theme.css">
 
-  <!-- Meta Description -->
-  <meta name="description" content="SkillTasker Pvt. Ltd. is a professional IT company offering web development, app development, digital marketing, and industry-ready software training to grow your business and career.">
+<style>
+  /* ---- page-specific styling (hero, sections unique to homepage) ---- */
+  .hero{ position:relative; padding:64px 0 100px; overflow:hidden; }
+  .hero .st-container{ display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; }
+  .hero h1{ font-size:clamp(34px,4.6vw,58px); letter-spacing:-0.02em; }
+  .hero h1 span{ background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p.lead{ font-size:18px; color:var(--text-2); max-width:520px; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin:30px 0 36px; }
+  .hero-trust{ display:flex; gap:28px; flex-wrap:wrap; }
+  .hero-trust .st-stat-num{ font-size:24px; }
+  .hero-visual{ position:relative; }
+  .notify-panel{
+    background:var(--ink-3); border:1px solid var(--hairline-2); border-radius:18px; overflow:hidden;
+    box-shadow:0 0 60px rgba(124,58,237,0.10), 0 32px 64px rgba(0,0,0,0.5);
+  }
+  .notify-head{
+    background:var(--ink-2); padding:14px 18px; display:flex; align-items:center; gap:8px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .notify-dot{ width:10px; height:10px; border-radius:50%; }
+  .notify-dot.r{ background:#FF5E78; } .notify-dot.y{ background:#F5A623; } .notify-dot.g{ background:#22c55e; }
+  .notify-label{ font-family:var(--ff-mono); font-size:11px; color:var(--text-3); margin-left:auto; letter-spacing:.08em; display:flex; align-items:center; gap:7px; }
+  .notify-label .pulse{ width:7px; height:7px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 rgba(34,197,94,0.5); animation:notifyPulse 2s infinite; }
+  @keyframes notifyPulse{ 0%{ box-shadow:0 0 0 0 rgba(34,197,94,0.55);} 70%{ box-shadow:0 0 0 8px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+  .notify-list{ padding:18px; display:flex; flex-direction:column; gap:10px; }
+  .notify-row{
+    display:flex; align-items:center; gap:13px; padding:14px 16px; background:var(--ink-2);
+    border:1px solid var(--hairline); border-radius:12px; transition:border-color .2s, transform .2s;
+  }
+  .notify-row:hover{ border-color:var(--hairline-2); transform:translateX(2px); }
+  .notify-row .rdot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .notify-row .rtext{ flex:1; }
+  .notify-row .rtitle{ font-size:14.5px; font-weight:600; color:var(--text-1); display:block; }
+  .notify-row .rsub{ font-family:var(--ff-mono); font-size:11.5px; color:var(--text-3); }
+  .notify-pill{
+    font-family:var(--ff-mono); font-size:10px; padding:4px 10px; border-radius:999px; letter-spacing:.05em;
+    text-transform:uppercase; white-space:nowrap;
+  }
+  .notify-pill.live{ background:rgba(34,197,94,0.12); color:#4ade80; border:1px solid rgba(34,197,94,0.28); }
+  .notify-pill.project{ background:rgba(157,92,255,0.14); color:var(--violet-2); border:1px solid rgba(157,92,255,0.3); }
+  .notify-pill.new{ background:rgba(240,87,76,0.13); color:#ff8b82; border:1px solid rgba(240,87,76,0.28); }
+  .notify-pill.hiring{ background:rgba(245,166,35,0.14); color:#f5c37a; border:1px solid rgba(245,166,35,0.3); }
+  .notify-foot{
+    background:var(--ink-2); border-top:1px solid var(--hairline); padding:13px 18px;
+    display:flex; justify-content:space-between; align-items:center; font-family:var(--ff-mono); font-size:11px; color:var(--text-3);
+  }
+  .notify-foot span.acc{ color:var(--violet-2); }
+  @media(max-width:960px){ .hero .st-container{ grid-template-columns:1fr; } .hero-visual{ order:-1; } }
 
-  <!-- Keywords -->
-  <meta name="keywords" content="SkillTasker, web development company, app development company, software training institute, digital marketing services, IT company in Bhubaneswar">
+  .about-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center; }
+  .about-media{ position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--hairline-2); }
+  .about-media img{ width:100%; height:380px; object-fit:cover; filter:grayscale(0.25) contrast(1.05); }
+  .about-media::after{ content:''; position:absolute; inset:0; background:linear-gradient(150deg, rgba(124,58,237,0.38), rgba(198,41,155,0.22) 55%, rgba(10,7,19,0.5) 100%); mix-blend-mode:multiply; pointer-events:none; }
+  .about-badge{ position:absolute; bottom:16px; left:16px; background:rgba(10,7,19,0.75); backdrop-filter:blur(6px); border:1px solid var(--hairline-2); border-radius:14px; padding:12px 16px; }
+  .about-list{ display:flex; flex-direction:column; gap:14px; margin-top:26px; }
+  .about-list li{ display:flex; gap:12px; align-items:flex-start; list-style:none; color:var(--text-2); font-size:15px; }
+  .about-list i{ color:var(--violet-2); margin-top:3px; }
+  @media(max-width:900px){ .about-grid{ grid-template-columns:1fr; } }
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://skilltasker.in/">
+  .service-card a.st-more{ display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:14px; font-weight:600; color:var(--violet-2); }
+  .service-card a.st-more i{ transition:transform .2s; }
+  .service-card:hover a.st-more i{ transform:translateX(4px); }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="SkillTasker Pvt. Ltd. – Web Development & Software Training">
-  <meta property="og:description" content="Grow your business and skills with modern web solutions and professional training.">
-  <meta property="og:image" content="https://skilltasker.in/images/logo.png">
-  <meta property="og:url" content="https://skilltasker.in/">
-  <meta property="og:type" content="website">
+  .diff-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:800px){ .diff-row{ grid-template-columns:1fr; } }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
+  .course-card{ display:flex; flex-direction:column; height:100%; }
+  .course-card .tag{ align-self:flex-start; margin-bottom:14px; }
+  .course-card ul{ margin:14px 0 20px; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .course-card ul li{ font-size:14px; color:var(--text-2); display:flex; gap:8px; }
+  .course-card ul li i{ color:var(--coral); font-size:12px; margin-top:5px; }
+  .course-card .st-btn{ margin-top:auto; }
 
-  <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png">
+  .process-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:step; }
+  .process-step{ position:relative; padding-top:10px; }
+  .process-step .n{ font-family:var(--ff-display); font-size:40px; font-weight:700; color:var(--ink-4); -webkit-text-stroke:1px var(--hairline-2); }
+  @media(max-width:900px){ .process-row{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .process-row{ grid-template-columns:1fr; } }
 
-  <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  .portfolio-strip{ background:var(--ink-2); padding:60px 0; }
+  .portfolio-track img{ height:64px; margin:0 40px; opacity:.85; }
+
+  /* Testimonials */
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media(max-width:900px){ .testi-grid{ grid-template-columns:1fr; } }
+  .testi-card{ display:flex; flex-direction:column; height:100%; }
+  .testi-stars{ display:flex; gap:4px; margin-bottom:16px; }
+  .testi-star{ width:15px; height:15px; background:var(--grad-brand); clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+  .testi-text{ font-size:15px; color:var(--text-2); line-height:1.7; flex:1; }
+  .testi-author{ display:flex; align-items:center; gap:12px; margin-top:22px; padding-top:20px; border-top:1px solid var(--hairline); }
+  .testi-avatar{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--ff-display); font-weight:700; font-size:14px; flex-shrink:0; }
+  .testi-name{ font-family:var(--ff-display); font-size:14.5px; font-weight:600; color:var(--text-1); }
+  .testi-role{ font-family:var(--ff-mono); font-size:11.5px; color:var(--text-3); margin-top:2px; }
+
+  .cta-band{ position:relative; border-radius:32px; overflow:hidden; padding:70px 48px; text-align:center; background:var(--ink-3); border:1px solid var(--hairline-2); }
+  .cta-band::before{ content:''; position:absolute; inset:0; background:var(--grad-brand); opacity:.14; }
+  .cta-band h2{ position:relative; font-size:clamp(26px,3.4vw,40px); max-width:700px; margin:0 auto 14px; }
+  .cta-band p{ position:relative; max-width:560px; margin:0 auto 30px; }
+  .cta-band .st-btns{ position:relative; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  .contact-wrap{ display:grid; grid-template-columns:.85fr 1.15fr; gap:40px; background:var(--ink-3); border:1px solid var(--hairline); border-radius:28px; padding:8px; overflow:hidden; }
+  .contact-info{ padding:40px; }
+  .contact-info .item{ display:flex; gap:14px; margin-bottom:22px; }
+  .contact-info .item i{ width:40px; height:40px; border-radius:10px; background:var(--grad-brand-soft); border:1px solid var(--hairline-2); display:flex; align-items:center; justify-content:center; color:var(--violet-2); flex-shrink:0; }
+  .contact-form{ background:var(--ink-2); border-radius:22px; padding:40px; margin:8px; }
+  @media(max-width:900px){ .contact-wrap{ grid-template-columns:1fr; } }
+</style>
 </head>
 
+<body class="st-theme">
+<div class="st-noise"></div>
 
-<body>
-
-<!-- Header / Topbar -->
- <h1 class="visually-hidden">
-  SkillTasker Pvt. Ltd. – Web Development, App Development, Digital Marketing & Software Training Company
-</h1>
-<section class="topbar d-flex justify-content-between px-3 py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-12">
-        <div>Email: skilltasker9@gmail.com</div>
-      </div>
-      <div class="col-md-3 col-12">
-        <div>Phone: +91 7008482165</div>
-      </div>
-      <div class="col-md-6 col-12">
-        <select class="float-md-end w-80 w-md-auto mt-2 mt-md-0">
-          <option>English</option>
-          <option>Hindi</option>
-        </select>
-      </div>
+<!-- Topbar -->
+<div class="st-topbar">
+  <div class="st-container">
+    <a class="st-top-item" href="mailto:skilltasker9@gmail.com"><i class="fa-solid fa-envelope"></i> skilltasker9@gmail.com</a>
+    <a class="st-top-item" href="tel:+917008482165"><i class="fa-solid fa-phone"></i> +91 70084 82165</a>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span class="st-top-item"><i class="fa-solid fa-location-dot"></i> Bhubaneswar, Odisha</span>
+      <select aria-label="Language"><option>English</option><option>Hindi</option></select>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-light gap-4">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <img src="/images/logo.png" alt="Logo" onerror="this.style.display='none'">
-      <!-- <span class="fw-bold">SkillTasker</span> -->
+<nav class="st-nav">
+  <div class="st-container">
+    <a class="st-brand" href="index.html">
+      <img src="images/logo.png" alt="SkillTasker Pvt. Ltd. logo">
     </a>
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      <span class="close-icon">×</span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-lg-start">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li><a class="dropdown-item" href="training.html">Training</a></li>
-            <li><a class="dropdown-item" href="development.html">Development</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
-        <li class="nav-item">
-          <a class="nav-link" style="background: linear-gradient(to right, #f9335e, #e73ee7); border-radius: 20px; color: black;" href="book-demo.html">Book A Demo!</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="st-nav-links" id="stNavLinks">
+      <li><a class="st-link active" href="index.html">Home</a></li>
+      <li><a class="st-link" href="aboutus.html">About</a></li>
+      <li><a class="st-link" href="training.html">Training</a></li>
+      <li><a class="st-link" href="ai solutions.html">AI Solutions</a></li>
+      <li><a class="st-link" href="career.html">Careers</a></li>
+      <li><a class="st-link" href="#contact">Contact</a></li>
+      <li><a class="st-nav-cta" href="book a demo.html">Book a Free Demo</a></li>
+    </ul>
+    <button class="st-nav-toggle" id="stNavToggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
   </div>
 </nav>
 
-<!-- Hero with Slider -->
-<header id="home" class="hero-slider">
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2700" data-bs-pause="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/images/ai1.jpg" class="d-block w-100" alt="Web Development Company in India" loading="lazy">
-        <div class="hero-caption">
-          <h1 class="display-5 fw-bold">Grow Your Business & Skills With SkillTasker</h1>
-          <p class="lead">Application + clean code + mobile-first design</p>
-          <div class="mt-3">
-            <a href="#service" class="btn btn-primary btn-lg m-2">Our Services</a>
+<!-- HERO -->
+<header class="hero">
+  <div class="st-glow" style="width:520px;height:520px;top:-160px;left:-160px;background:radial-gradient(circle,var(--glow-violet),transparent 65%);"></div>
+  <div class="st-glow" style="width:420px;height:420px;bottom:-140px;right:-100px;background:radial-gradient(circle,var(--glow-magenta),transparent 65%);"></div>
+  <div class="st-container">
+    <div class="hero-copy st-reveal">
+      <span class="st-eyebrow">Bhubaneswar · Odisha</span>
+      <h1>Odisha's trusted partner for <span>AI training</span> &amp; <span>AI‑driven</span> software solutions.</h1>
+      <p class="lead">SkillTasker trains students and professionals in web, app, data & AI skills — and builds AI automation, websites and apps for businesses that want to move faster. One team, two missions: teach it, then build it.</p>
+      <div class="hero-ctas">
+        <a href="training.html" class="st-btn st-btn-primary">Explore Training Programs <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="book a demo.html" class="st-btn st-btn-ghost">Book a Free Demo</a>
+      </div>
+      <div class="hero-trust">
+        <div><div class="st-stat-num" data-count="500">0+</div><div class="st-stat-label">Learners trained</div></div>
+        <div><div class="st-stat-num" data-count="40">0+</div><div class="st-stat-label">Projects delivered</div></div>
+        <div><div class="st-stat-num" data-count="7">0</div><div class="st-stat-label">Service verticals</div></div>
+        <div><div class="st-stat-num" data-count="10">0+</div><div class="st-stat-label">Hiring partners</div></div>
+      </div>
+    </div>
+    <div class="hero-visual st-reveal">
+      <div class="notify-panel">
+        <div class="notify-head">
+          <span class="notify-dot r"></span><span class="notify-dot y"></span><span class="notify-dot g"></span>
+          <span class="notify-label"><span class="pulse"></span> LIVE UPDATES</span>
+        </div>
+        <div class="notify-list">
+          <div class="notify-row">
+            <span class="rdot" style="background:#4ade80;"></span>
+            <div class="rtext"><span class="rtitle">New batch: Gen AI &amp; Prompt Engineering</span><span class="rsub">Enrolling now · training.html</span></div>
+            <span class="notify-pill live">Live</span>
+          </div>
+          <div class="notify-row">
+            <span class="rdot" style="background:var(--violet-2);"></span>
+            <div class="rtext"><span class="rtitle">Case study: Mixo — AI voice assistant</span><span class="rsub">Built by our delivery team</span></div>
+            <span class="notify-pill project">Project</span>
+          </div>
+          <div class="notify-row">
+            <span class="rdot" style="background:#ff8b82;"></span>
+            <div class="rtext"><span class="rtitle">Now building: AI-powered websites</span><span class="rsub">Chatbots, smart search & more</span></div>
+            <span class="notify-pill new">Ongoing</span>
+          </div>
+          <div class="notify-row">
+            <span class="rdot" style="background:#f5c37a;"></span>
+            <div class="rtext"><span class="rtitle">Applications open — Web Dev internships</span><span class="rsub">career.html</span></div>
+            <span class="notify-pill hiring">Hiring</span>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/ai2.jpg" class="d-block w-100" alt="Web Development Company in India" loading="lazy">
-        <div class="hero-caption">
-          <h1 class="display-5 fw-bold">Training & Development</h1>
-          <p class="lead">Hands-on coding with latest technologies and AI</p>
-          <a href="#training" class="btn btn-primary btn-lg m-2">Join Training</a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/ai4.jpg" class="d-block w-100" alt="Web Development Company in India" loading="lazy">
-        <div class="hero-caption">
-          <h1 class="display-5 fw-bold">Build AI agents and chatbots</h1>
-          <p class="lead"> Professional Web Development, App Development, Digital Marketing & Industry-Ready Software Training</p>
-          <a href="book-demo.html" class="btn btn-outline-primary btn-lg m-2">Get Free Consultation</a>
+        <div class="notify-foot">
+          <span>skilltasker.in</span>
+          <span class="acc">+91 70084 82165</span>
         </div>
       </div>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 </header>
-<br><br>
+
+<!-- Tech marquee -->
+<div class="st-marquee">
+  <div class="st-marquee-track">
+    <img src="images/python.png" alt="Python"><img src="images/react.png" alt="React"><img src="images/django.png" alt="Django"><img src="images/js.png" alt="JavaScript"><img src="images/java.png" alt="Java"><img src="images/html.png" alt="HTML"><img src="images/css.png" alt="CSS"><img src="images/node.png" alt="Node.js">
+    <img src="images/python.png" alt="Python"><img src="images/react.png" alt="React"><img src="images/django.png" alt="Django"><img src="images/js.png" alt="JavaScript"><img src="images/java.png" alt="Java"><img src="images/html.png" alt="HTML"><img src="images/css.png" alt="CSS"><img src="images/node.png" alt="Node.js">
+  </div>
+</div>
 
 <!-- About -->
-<section id="about" class="pd-5">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-6">
-        <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
-          <img src="/images/aboutus image.webp" alt="About" class="img-cover2 hidden-img slide-left" />
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <h2 class="fw-semibold">About Us</h2>
-                <p>
-          SkillTasker Pvt. Ltd. is a fast-growing IT company dedicated to empowering businesses and individuals through
-          modern technology solutions and practical skill-based training.
-        </p>
-        <p>
-          We bridge the gap between education and industry by delivering real-world development projects, scalable
-          digital solutions, and career-oriented training programs.
-        </p>
-        <p>At SkillTasker, we believe that skills shape the future. Our mission is to empower individuals and organizations by providing high-quality training, development, and resources that bridge the gap between learning and real-world application.</p>
-        <p>We specialize in offering practical, hands-on learning experiences that prepare people for today’s fast-changing world of work. Whether it’s professional development, technical expertise, or soft skills enhancement, SkillTasker ensures every learner gains confidence, knowledge, and the ability to succeed.</p>
-      </div>
+<section class="st-section" id="about">
+  <div class="st-container about-grid">
+    <div class="about-media st-reveal">
+      <img src="images/software train.jpg" alt="SkillTasker training and development team at work">
+      <div class="about-badge"><div class="st-stat-num" style="font-size:20px;">Est. Bhubaneswar</div><div class="st-stat-label">Odisha, India</div></div>
+    </div>
+    <div class="st-reveal">
+      <span class="st-eyebrow">Who we are</span>
+      <h2>Skills shape the future — we build both the people and the products.</h2>
+      <p>SkillTasker Pvt. Ltd. is an Odisha-based training and technology company. We run hands-on, mentor-led programs in web development, app development, data analysis and applied AI — and we run a development studio that ships websites, apps and AI automation for real businesses.</p>
+      <p>That combination is deliberate: our trainers are practitioners who build client projects, and our client work is powered by the same curriculum we teach. It's why learners leave with portfolio-ready work, and why our AI solutions are grounded in production experience, not slideware.</p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-circle-check"></i> Practical, project-based curriculum — not just theory</li>
+        <li><i class="fa-solid fa-circle-check"></i> Trainers who are active industry practitioners</li>
+        <li><i class="fa-solid fa-circle-check"></i> In-house AI & software delivery team for businesses</li>
+        <li><i class="fa-solid fa-circle-check"></i> Internship and placement support for learners</li>
+      </ul>
     </div>
   </div>
 </section>
-<br><br>
 
 <!-- Services -->
-<section class="services bg-light-service" id="service">
-  <div class="container"><br>
-    <div class="text-center mb-5">
-      <h2 class="fw-semibold">Services</h2><br>
-      <p class="text-muted">From design to deployment, we cover everything.</p>
+<section class="st-section" id="service" style="background:var(--ink-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);">
+  <div class="st-container">
+    <div class="st-head st-center">
+      <span class="st-eyebrow">What we do</span>
+      <h2>Training for people. AI solutions for businesses.</h2>
+      <p>From your first line of code to a production AI agent — pick a track to learn, or hand us the brief and we'll build it.</p>
     </div>
+    <div class="st-grid st-grid-4">
 
-    <div class="row g-4">
-      <div class="col-md-3 col-6">
-        <div class="card feature-card h-100 rounded-4">
-          <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
-            <img src="/images/web development.jpg" class="img-cover1" alt="Web Development" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Web Development</h5>
-            <p class="card-text">Responsive websites with Bootstrap 5 and modern practices.</p>
-          </div>
-        </div>
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-comments"></i></div>
+        <h4>Chatbot Development</h4>
+        <p style="font-size:14.5px;">AI chatbots, virtual assistants and prompt-engineered automation.</p>
+        <a class="st-more" href="ai solutions.html#chatbot">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <div class="col-md-3 col-6">
-        <div class="card feature-card h-100 rounded-4">
-          <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
-            <img src="/images/digital mark.jpg" class="img-cover1" alt="digital marketing" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Digital Marketing</h5>
-            <p class="card-text">Clean, accessible interfaces that scale smoothly.</p>
-          </div>
-        </div>
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-code"></i></div>
+        <h4>AI-Powered Websites</h4>
+        <p style="font-size:14.5px;">Responsive, SEO-ready websites with AI features built in.</p>
+        <a class="st-more" href="ai solutions.html#website">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <div class="col-md-3 col-6">
-        <div class="card feature-card h-100 rounded-4">
-          <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
-            <img src="/images/app develop.png" class="img-cover1" alt="app development" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">App Development</h5>
-            <p class="card-text">Optimize your website for better search engine ranking.</p>
-          </div>
-        </div>
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h4>App Development</h4>
+        <p style="font-size:14.5px;">Android & cross-platform apps designed for performance and clean UX.</p>
+        <a class="st-more" href="ai solutions.html#app">Learn more <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <div class="col-md-3 col-6">
-        <div class="card feature-card h-100 rounded-4">
-          <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
-            <img src="/images/software train.jpg" class="img-cover1" alt="software training" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Software Training</h5>
-            <p class="card-text">Performance-focused builds with semantic HTML.</p>
-          </div>
-        </div><br>
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-chart-line"></i></div>
+        <h4>Digital Marketing</h4>
+        <p style="font-size:14.5px;">SEO, social and performance marketing to grow qualified traffic.</p>
+        <a class="st-more" href="ai solutions.html#marketing">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h4>Training Programs</h4>
+        <p style="font-size:14.5px;">Web dev, Python, data & applied AI — mentor-led, project-based batches.</p>
+        <a class="st-more" href="training.html">Explore courses <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h4>Web Scraping</h4>
+        <p style="font-size:14.5px;">Reliable data pipelines that turn public web data into structured insight.</p>
+        <a class="st-more" href="web scraping.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-database"></i></div>
+        <h4>Data Analysis</h4>
+        <p style="font-size:14.5px;">Dashboards and analysis that turn raw data into decisions.</p>
+        <a class="st-more" href="data analysis.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="st-card service-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-briefcase"></i></div>
+        <h4>Internships &amp; Careers</h4>
+        <p style="font-size:14.5px;">Real project internships that lead into full-time opportunities.</p>
+        <a class="st-more" href="career.html">View openings <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why SkillTasker -->
+<section class="st-section">
+  <div class="st-container">
+    <div class="st-head">
+      <span class="st-eyebrow">Why SkillTasker</span>
+      <h2>Built by practitioners, not just presenters.</h2>
+    </div>
+    <div class="diff-row">
+      <div class="st-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-user-gear"></i></div>
+        <h4>Mentor-led, not video-only</h4>
+        <p>Every batch is run by working developers and analysts, so questions get real answers, not scripted ones.</p>
+      </div>
+      <div class="st-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-diagram-project"></i></div>
+        <h4>You build real projects</h4>
+        <p>Curriculum is anchored to the same kind of work our client-delivery team ships — portfolio-ready by design.</p>
+      </div>
+      <div class="st-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-bolt"></i></div>
+        <h4>AI-first curriculum</h4>
+        <p>Every track now includes applied AI — prompt engineering, automation and GenAI tooling relevant to the role.</p>
+      </div>
+      <div class="st-card st-reveal">
+        <div class="st-icon-tile"><i class="fa-solid fa-handshake"></i></div>
+        <h4>Placement & internship support</h4>
+        <p>From resume review to interview prep, plus internship pathways into our own delivery projects.</p>
       </div>
     </div>
   </div>
 </section>
-<br>
 
-<!-- Training -->
-<section id="training" class="pd-5">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6 order-lg-2">
-        <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
-          <img src="/images/training images.png" alt="Training" class="img-cover slide-right" />
-        </div>
+<!-- Training / Courses -->
+<section class="st-section" id="training" style="background:var(--ink-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);">
+  <div class="st-container">
+    <div class="st-head st-center">
+      <span class="st-eyebrow">Training & Development</span>
+      <h2>Pick a track. Learn it hands-on.</h2>
+      <p>Training and development is how we bridge learning with real-world application — every course below ships with live projects and mentor feedback.</p>
+    </div>
+    <div class="st-grid st-grid-3">
+      <div class="st-card course-card st-reveal">
+        <span class="st-pill tag">Beginner → Job Ready</span>
+        <h4>Full-Stack Web Development</h4>
+        <p style="font-size:14.5px;">HTML, CSS, JavaScript, React & Node — from static pages to deployed full-stack apps.</p>
+        <ul><li><i class="fa-solid fa-circle"></i>Live project builds</li><li><i class="fa-solid fa-circle"></i>Git & deployment workflow</li><li><i class="fa-solid fa-circle"></i>Internship pathway</li></ul>
+        <a class="st-btn st-btn-ghost st-btn-block" href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" rel="noopener">Join a Batch</a>
       </div>
-      <div class="col-lg-6 order-lg-1">
-        <h2 class="fw-semibold">Training & Development</h2>
-        <p>Training and Development is a continuous process aimed at enhancing the knowledge, skills, and abilities of individuals to improve their performance and growth. It plays a vital role in both personal and professional success, as well as in achieving organizational goals.</p>
-        <p>Training and Development is evolving with technology. Future trends include AI-driven learning, virtual reality (VR) training, gamified learning platforms, and personalized skill development programs.</p>
-        <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" class="btn btn-primary mt-3">Join a Batch</a>
+      <div class="st-card course-card st-reveal">
+        <span class="st-pill tag">Backend Focus</span>
+        <h4>Python &amp; Django</h4>
+        <p style="font-size:14.5px;">Core Python, REST APIs and Django to build and ship backend systems confidently.</p>
+        <ul><li><i class="fa-solid fa-circle"></i>API design & auth</li><li><i class="fa-solid fa-circle"></i>Database modelling</li><li><i class="fa-solid fa-circle"></i>Real backend project</li></ul>
+        <a class="st-btn st-btn-ghost st-btn-block" href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" rel="noopener">Join a Batch</a>
+      </div>
+      <div class="st-card course-card st-reveal">
+        <span class="st-pill tag">AI / GenAI</span>
+        <h4>Data Analysis &amp; Applied AI</h4>
+        <p style="font-size:14.5px;">Python for data, dashboards, and applied GenAI — prompt design to automation.</p>
+        <ul><li><i class="fa-solid fa-circle"></i>Data cleaning & visualisation</li><li><i class="fa-solid fa-circle"></i>GenAI & automation tooling</li><li><i class="fa-solid fa-circle"></i>Capstone project</li></ul>
+        <a class="st-btn st-btn-ghost st-btn-block" href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" rel="noopener">Join a Batch</a>
       </div>
     </div>
   </div>
 </section>
-<br>
 
-
-<!-- Contact / CTA area -->
-<div class="d-flex justify-content-center align-items-center px-3" style="min-height: 1px;">
-  <div class="contact-section d-flex flex-wrap" id="contact">
-    <!-- Left Side -->
-    <div class="col-md-6 left-box">
-      <h2>Let's get in touch</h2><br>
-      <p><b>📍 Address: </b> Plot- 321/2487, BJB clg cooperative society, Azad-Nagar, sundarpada, BBSR, 751002</p><br>
-      <p><b>✉ Email: </b> skilltasker9@gmail.com</p><br>
-      <p><b>📞 Phone: </b>+91 7008482165</p>
+<!-- Process -->
+<section class="st-section">
+  <div class="st-container">
+    <div class="st-head">
+      <span class="st-eyebrow">How training works</span>
+      <h2>From enrolment to a portfolio you can show.</h2>
     </div>
+    <div class="process-row">
+      <div class="process-step st-reveal"><div class="n">01</div><h4>Enrol &amp; assess</h4><p>Pick a track; we gauge your starting point so the pace fits you.</p></div>
+      <div class="process-step st-reveal"><div class="n">02</div><h4>Learn by building</h4><p>Live mentor-led sessions paired with real, incremental projects.</p></div>
+      <div class="process-step st-reveal"><div class="n">03</div><h4>Ship a capstone</h4><p>A portfolio-ready project reviewed by working practitioners.</p></div>
+      <div class="process-step st-reveal"><div class="n">04</div><h4>Internship &amp; placement</h4><p>Support into internships, our delivery projects, or hiring partners.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Right Side -->
-    <div class="col-md-6 right-box">
-      <h3>Contact Us</h3>
-      <form>
-        <input type="text" placeholder="Username" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Phone" required>
-        <textarea rows="4" placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
+<!-- Portfolio strip -->
+<div class="portfolio-strip">
+  <div class="st-container">
+    <div class="st-head st-center" style="margin-bottom:34px;">
+      <span class="st-eyebrow">Selected work</span>
+      <h2 style="font-size:26px;">Projects our teams have shipped</h2>
+    </div>
+  </div>
+  <div class="st-marquee st-marquee-rev" style="border:none;background:transparent;">
+    <div class="st-marquee-track portfolio-track">
+      <img src="images/port 1.png" alt="Project 1"><img src="images/port 2.png" alt="Project 2"><img src="images/port 3.png" alt="Project 3"><img src="images/port 5.webp" alt="Project 5"><img src="images/port 6.png" alt="Project 6">
+      <img src="images/port 1.png" alt="Project 1"><img src="images/port 2.png" alt="Project 2"><img src="images/port 3.png" alt="Project 3"><img src="images/port 5.webp" alt="Project 5"><img src="images/port 6.png" alt="Project 6">
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<section class="st-section">
+  <div class="st-container">
+    <div class="st-head st-center">
+      <span class="st-eyebrow" style="justify-content:center;">What people say</span>
+      <h2>Trusted by students &amp; businesses</h2>
+      <p>Real feedback from our community of learners and clients across Odisha and beyond.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="st-card testi-card st-reveal">
+        <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+        <p class="testi-text">SkillTasker's GenAI course completely changed my career trajectory. Within 3 months I landed a role as an AI Engineer at a Hyderabad-based startup with a 60% salary hike.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(124,58,237,0.16);color:var(--violet-2);">RS</div>
+          <div><div class="testi-name">Rohan Sahoo</div><div class="testi-role">AI Engineer, Bhubaneswar</div></div>
+        </div>
+      </div>
+      <div class="st-card testi-card st-reveal">
+        <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+        <p class="testi-text">We hired SkillTasker to build our e-commerce website and a custom inventory management system. Delivered on time, within budget, and the team was professional throughout.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(240,87,76,0.16);color:var(--coral);">PM</div>
+          <div><div class="testi-name">Priya Mohapatra</div><div class="testi-role">Business Owner, Cuttack</div></div>
+        </div>
+      </div>
+      <div class="st-card testi-card st-reveal">
+        <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+        <p class="testi-text">I came from a non-tech background — commerce graduate with zero coding knowledge. SkillTasker's web dev course made me confident enough to build and deploy my own portfolio in 8 weeks.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(198,41,155,0.16);color:var(--magenta);">AN</div>
+          <div><div class="testi-name">Anjali Nayak</div><div class="testi-role">Freelance Web Developer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Careers announce -->
+<div class="st-announce">
+  <div class="st-announce-track">
+    <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" rel="noopener"><i class="fa-solid fa-circle dot"></i> Hiring now for <b>Web Development</b>, <b>Frontend</b> &amp; <b>Full-Stack</b> internships</a>
+    <a href="career.html"><i class="fa-solid fa-circle dot"></i> Open roles in <b>Digital Marketing</b> &amp; <b>Telecalling</b></a>
+    <a href="https://forms.gle/9gfHgJGDg8Yfpqxc6" target="_blank" rel="noopener"><i class="fa-solid fa-circle dot"></i> Hiring now for <b>Web Development</b>, <b>Frontend</b> &amp; <b>Full-Stack</b> internships</a>
+    <a href="career.html"><i class="fa-solid fa-circle dot"></i> Open roles in <b>Digital Marketing</b> &amp; <b>Telecalling</b></a>
+  </div>
+</div>
+
+<!-- CTA band -->
+<section class="st-section-tight">
+  <div class="st-container">
+    <div class="cta-band st-reveal">
+      <span class="st-eyebrow" style="justify-content:center;">Let's talk</span>
+      <h2>Ready to upgrade your skills — or your business?</h2>
+      <p>Whether you're joining a batch or bringing us a project brief, the next step is a short conversation.</p>
+      <div class="st-btns">
+        <a href="book a demo.html" class="st-btn st-btn-primary">Book a Free Demo</a>
+        <a href="#contact" class="st-btn st-btn-ghost">Talk to the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="st-section" id="contact">
+  <div class="st-container">
+    <div class="st-head st-center">
+      <span class="st-eyebrow">Get in touch</span>
+      <h2>Let's get in touch</h2>
+    </div>
+    <div class="contact-wrap st-reveal">
+      <div class="contact-info">
+        <div class="item"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><br>HIG-21, First Floor, Anant Vihar Phase-2,<br>Pokhariput, Bhubaneswar, Odisha 751020</div></div>
+        <div class="item"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><br><a href="mailto:skilltasker9@gmail.com">skilltasker9@gmail.com</a></div></div>
+        <div class="item"><i class="fa-solid fa-phone"></i><div><strong>Phone</strong><br><a href="tel:+917008482165">+91 70084 82165</a></div></div>
+        <div class="item"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/917008482165" target="_blank" rel="noopener">Chat with us</a></div></div>
+        <div class="st-social">
+          <a href="https://www.facebook.com/share/1LyuoZkr7U/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/skilltasker10?igsh=MWMza3BvN3JkZ3RqZw==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/skilltasker-pvt-ltd/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="username" class="st-field" placeholder="Your name" required>
+        <input type="email" id="email" class="st-field" placeholder="Email address" required>
+        <input type="tel" id="phone" class="st-field" placeholder="Phone number" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" title="Please enter exactly 10 digits">
+        <textarea id="message" class="st-field" rows="4" placeholder="Tell us what you need — a course, or a project" required></textarea>
+        <button type="submit" class="st-btn st-btn-primary st-btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
   </div>
-</div>
-<br>
+</section>
 
 <!-- WhatsApp float -->
-<a href="https://wa.me/917008482165" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<br>
-
-<!-- Marquee (job openings) -->
-<div class="scrolling-text">
-  <p>
-    🚀 Openings for 
-    <strong>Web Development</strong>, 
-    <strong>Frontend Development</strong>, 
-    <strong>Full Stack Development</strong>, 
-    <strong>Digital Marketing</strong> & 
-    <strong>Telecaller</strong>
-  </p>
-</div>
-
-<br>
+<a href="https://wa.me/917008482165" class="st-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <!-- Footer -->
-<footer>
-  <div class="footer">
-    <div class="container">
-      <div class="row gy-4">
-
-        <!-- Logo & Tagline -->
-        <div class="col-md-3 footer-col text-center"><br>
-          <img src="/images/logo.png" alt="Logo" style="max-width:120px;"><br><br>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/share/1LyuoZkr7U/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/skilltasker10?igsh=MWMza3BvN3JkZ3RqZw=="><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/skilltasker-pvt-ltd/"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-md-4 footer-col text-center text-md-center"><br>
-           <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About</a></li>
-            <li><a href="career.html">Career</a></li>
-            <li><a href="book-demo.html">Book A Demo!</a></li>
-          </ul>
-          </ul>
-        </div>
-
-        <!-- Map -->
-        <div class="col-md-5 footer-col text-md-end">
-          <div class="map-container mt-2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7487.431968626879!2d85.80842864008068!3d20.229119892000227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x62d22fa8c441e58d%3A0x8faf82e458aebff0!2sSkillTasker!5e0!3m2!1sen!2sin!4v1756461155977!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
+<footer class="st-footer">
+  <div class="st-container">
+    <div class="st-grid" style="grid-template-columns:1.2fr 1fr 1fr 1.3fr;">
+      <div>
+        <div class="st-brand"><img src="images/logo.png" alt="SkillTasker logo"></div>
+        <p>Odisha's AI training & AI solutions company — teaching skills and building software that ships.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="career.html">Careers</a></li>
+          <li><a href="book a demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="ai solutions.html#chatbot">Chatbot Development</a></li>
+          <li><a href="ai solutions.html#website">AI-Powered Websites</a></li>
+          <li><a href="ai solutions.html#app">App Development</a></li>
+          <li><a href="ai solutions.html#marketing">Digital Marketing</a></li>
+          <li><a href="training.html">Training Programs</a></li>
+        </ul>
+      </div>
+      <div class="st-footer-map">
+        <h5>Find us</h5>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7487.431968626879!2d85.80842864008068!3d20.229119892000227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x62d22fa8c441e58d%3A0x8faf82e458aebff0!2sSkillTasker!5e0!3m2!1sen!2sin!4v1756461155977!5m2!1sen!2sin" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  </div><br>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    <p class="mb-0">All Rights Reserved SkillTasker Pvt. Ltd. @2025</p>
   </div>
+  <div class="st-footer-bottom">© 2026 SkillTasker Pvt. Ltd. All rights reserved. · Bhubaneswar, Odisha</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('stNavToggle');
+  const links = document.getElementById('stNavLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('st-open'));
 
-<script src="/js/script.js"></script>
+  // mobile dropdown toggle
+  document.querySelectorAll('.st-dropdown > a.st-link').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      if(window.innerWidth <= 960){
+        e.preventDefault();
+        a.parentElement.classList.toggle('st-open');
+      }
+    });
+  });
 
- <!-- for seo boost -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SkillTasker Pvt. Ltd.",
-  "url": "https://skilltasker.in",
-  "logo": "https://skilltasker.in/images/logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-7008482165",
-    "contactType": "customer support"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Azad Nagar, Sundarpada",
-    "addressLocality": "Bhubaneswar",
-    "addressRegion": "Odisha",
-    "postalCode": "751002",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.facebook.com/share/1LyuoZkr7U/",
-    "https://www.instagram.com/skilltasker10",
-    "https://www.linkedin.com/company/skilltasker-pvt-ltd/"
-  ]
-}
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.st-reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('st-in'); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el=>io.observe(el));
+
+  // counters
+  const counters = document.querySelectorAll('.st-stat-num[data-count]');
+  const counterIO = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const el = en.target;
+        const target = +el.getAttribute('data-count');
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target/60));
+        const suffix = el.textContent.includes('0') ? (target>=7? '+' : '') : '';
+        const timer = setInterval(()=>{
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.textContent = cur + (target>=10 ? '+' : '');
+        }, 20);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c=>counterIO.observe(c));
+
+  // contact form -> whatsapp
+  function sendToWhatsApp(e){
+    e.preventDefault();
+    const name = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    const text = `Hello SkillTasker, my name is ${name}.%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
+    window.open(`https://wa.me/917008482165?text=${text}`, '_blank');
+  }
 </script>
-
 </body>
 </html>

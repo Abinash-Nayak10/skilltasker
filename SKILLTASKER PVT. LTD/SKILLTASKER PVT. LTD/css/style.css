@@ -188,7 +188,6 @@
   background: #1ebe57; 
 }
 
-
 /* Optional: adjust on small mobile screens if overlapping content */
 @media(max-width: 767px){
   .whatsapp-float {
@@ -196,24 +195,7 @@
     left: 15px;
   }
 }
-.scrolling-text {
-  overflow: hidden;
-  background: #f8f9fa;
-  padding: 10px 0;
-  background-color: bisque;
-  text-align: center;
-}
 
-.scrolling-text p {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 18s linear infinite;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
 
     /* ---------- Footer ---------- */
     .footer { background: var(--footer-dark); color: #fff; padding: 40px 20px; }
